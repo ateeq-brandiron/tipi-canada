@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------------------- */
+/* Brand tokens — Turtle Island Power Inc. Brand Guide V10                     */
+/* -------------------------------------------------------------------------- */
+
+:root {
+  /* Core colours (Brand Guide V10 + logo SVG files). */
+  --tipi-yellow: #fdcb25; /* Brand Guide: Energy / Optimism */
+  --tipi-white: #ffffff; /* Brand Guide: Clarity / Openness */
+  --tipi-red: #ca3630; /* Logo SVG (.cls-2) */
+  --tipi-black: #000000; /* Logo SVG (default fill) */
+  /*
+   * TODO(brand): Forest hex is not specified in the Brand Guide text or the logo
+   * files. #1f3d2b is a temporary stand-in — replace with the official value and
+   * re-check contrast (must stay >= 4.5:1 against white).
+   */
+  --tipi-forest: #1f3d2b;
+
+  /* Derived neutrals (not brand colours; used for hierarchy only). */
+  --tipi-paper: #f5f4ef; /* quiet section background */
+  --tipi-ink-muted: #3f3f3f; /* secondary text on white: 10.4:1 */
+  --tipi-line: rgb(0 0 0 / 0.14); /* hairline linework on light */
+}
+
+@theme inline {
+  --color-yellow: var(--tipi-yellow);
+  --color-white: var(--tipi-white);
+  --color-red: var(--tipi-red);
+  --color-black: var(--tipi-black);
+  --color-forest: var(--tipi-forest);
+  --color-paper: var(--tipi-paper);
+  --color-ink-muted: var(--tipi-ink-muted);
+  --color-line: var(--tipi-line);
+
+  /* Cambria where installed; Caladea (metric-compatible, OFL) via next/font; then serif. */
+  --font-heading: Cambria, var(--font-caladea), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Base                                                                       */
+/* -------------------------------------------------------------------------- */
+
+html {
+  scroll-padding-top: 5.5rem; /* sticky nav height */
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--tipi-white);
+  color: var(--tipi-black);
+  font-family: var(--font-sans);
+  font-size: 1rem; /* 16px body (Brand: 16–18px Inter Regular) */
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Type scale — Brand Guide V10 */
+@layer components {
+  .type-h1 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.25rem; /* 36px */
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  @media (min-width: 768px) {
+    .type-h1 {
+      font-size: 3rem; /* 48px */
+    }
+  }
+
+  .type-h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.625rem; /* 26px */
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+  }
+  @media (min-width: 768px) {
+    .type-h2 {
+      font-size: 2rem; /* 32px */
+    }
+  }
+
+  .type-subhead {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.35;
+  }
+  @media (min-width: 768px) {
+    .type-subhead {
+      font-size: 1.25rem; /* 20px */
+    }
+  }
+
+  .type-lead {
+    font-size: 1.0625rem; /* 17px */
+    line-height: 1.65;
+  }
+  @media (min-width: 768px) {
+    .type-lead {
+      font-size: 1.125rem; /* 18px */
+    }
+  }
+
+  .type-label {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.75rem; /* 12px */
+    line-height: 1.4;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+}
+
+/* Visible, high-contrast focus for keyboard users on every surface. */
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid var(--tipi-yellow);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--tipi-black);
+  border-radius: 2px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Subtle scroll reveal (see components/Reveal.tsx)                            */
+/* Content is visible by default; JS only hides elements that are off-screen   */
+/* on load, and never when the user prefers reduced motion.                    */
+/* -------------------------------------------------------------------------- */
+
+[data-reveal="pending"] {
+  opacity: 0;
+  transform: translateY(12px);
+}
+[data-reveal="shown"] {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 600ms ease-out,
+    transform 600ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Native <details> disclosure marker is replaced by our own icon. */
+summary {
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
