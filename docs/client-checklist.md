@@ -2,6 +2,8 @@
 
 Placeholders and open items before launch. Search the code for `PLACEHOLDER`, `VERIFY`, `TODO(brand)` and `[… — TBC]` to find each one. Everything below is edited in [`/content/site.ts`](../content/site.ts) unless another file is named.
 
+> See also [`content-review.md`](content-review.md): the full cross-check of every linked document (24 Sept 2026). Its sections 2 and 3 are decisions for the client and legal.
+
 ## Placeholders (visible on the site today)
 
 - [ ] **Contact email.** Replace `company.contact.email` and set `emailIsPlaceholder: false` to enable the mailto link.
@@ -22,7 +24,10 @@ Placeholders and open items before launch. Search the code for `PLACEHOLDER`, `V
 - [ ] **New connective copy:** section headings, intros and hero facts (see decision E5).
 - [ ] **Ktunaxa naming:** "Ktunaxa First Nation" (FAQ Q3) vs "Ktunaxa Nation" (FAQ Q4, disclaimer).
 - [ ] **Hero headline:** "Powered by Water. Driven by Vision." (client line) is in use; confirm it replaces the Brand Guide line in the hero.
-- [ ] **Investment ask.** Confirm the $10M seed figure and copy, then set `NEXT_PUBLIC_SHOW_INVESTMENT_ASK=true`.
+- [ ] **Investment ask.** Confirm the seed amount. It is now `[SEED AMOUNT — TBC]`, because sources say $1–5M, $2–7M and $10M. Then set `NEXT_PUBLIC_SHOW_INVESTMENT_ASK=true`.
+- [ ] **Hubs:** confirm Castlegar (2031) and Trail (2033) are final. The July documents and the letter to the Nations say Cranbrook.
+- [ ] **Nations:** confirm the territorial statement ("within ʔamakʔis Ktunaxa") and naming, and that the Ktunaxa agree to appear in the ownership chart.
+- [ ] **Economic claims:** confirm or soften "robust economics / designed to deliver long-term returns" (see content-review §2.4).
 - [ ] **Legal:** confirm the "TIPI Coin" reference in the public disclaimer (§1).
 - [ ] **Legal:** confirm the form's privacy note and investor-type options (no "accredited investor" self-certification is collected).
 

@@ -32,6 +32,18 @@ export function Story() {
           </Reveal>
         ))}
       </ul>
+
+      <div className="mt-16">
+        <p className="type-label mb-6 text-red">{story.commitments.label}</p>
+        <ul className="grid gap-8 md:grid-cols-2 md:gap-12">
+          {story.commitments.items.map((c, i) => (
+            <Reveal as="li" key={c.title} delay={i * 80} className="border-t-2 border-black pt-6">
+              <h3 className="type-subhead">{c.title}</h3>
+              <p className="mt-3 text-ink-muted">{c.body}</p>
+            </Reveal>
+          ))}
+        </ul>
+      </div>
     </Section>
   );
 }

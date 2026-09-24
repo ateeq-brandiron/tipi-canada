@@ -193,6 +193,20 @@ export const story = {
     { title: "Progress", body: "Advancing clean energy and opportunity." },
     { title: "Respect", body: "Honouring land, community, and partnership." },
   ],
+  // Approved Messaging Platform value points (community impact), verbatim apart from "Inc." and "majority".
+  commitments: {
+    label: "Our commitment to community",
+    items: [
+      {
+        title: "Scalable Community Impact",
+        body: "Designed as a scalable blueprint, our model can be replicated in Indigenous and rural communities, creating long-term jobs, apprenticeship opportunities, and a pathway for local talent to build careers in emerging clean energy industries. Each project is designed to leave communities stronger than we found them.",
+      },
+      {
+        title: "Community Investment That Lasts",
+        body: "As a majority Indigenous-owned company, Turtle Island Power Inc. is committed to creating value that extends beyond the facility itself. By ensuring opportunity, investment, and long-term economic benefits remain within the communities where projects are developed, we help build stronger local economies that continue to grow for generations.",
+      },
+    ] satisfies Card[],
+  },
   image: {
     alt: "The Kootenay River valley near Blewett, British Columbia",
     placeholderNote: "[PHOTO — Kootenay landscape near the project site. Client to supply.]",
@@ -282,7 +296,8 @@ export const differentiators = {
   heading: "What sets Turtle Island Power Inc. apart.",
   items: [
     {
-      title: "A Majority Indigenous-Owned Green Hydrogen Supply Chain",
+      // Approved Messaging Platform: "An Indigenous-Owned Fully Green Hydrogen Supply Chain" (+ "Majority" per FAQ).
+      title: "A Majority Indigenous-Owned, Fully Green Hydrogen Supply Chain",
       body: "Indigenous stewardship shapes not only who we are, but how we make decisions, build partnerships, and create long-term value.",
     },
     {
@@ -380,10 +395,11 @@ export const timeline = {
 export const investment = {
   id: "investment",
   eyebrow: "The Investment",
-  // PLACEHOLDER: figure from the content draft. Client approval required before enabling.
-  amount: "$10M",
+  // PLACEHOLDER: sources disagree on the seed amount ($10M content draft; $1–5M Financial Story;
+  // $2–7M Aug 2026 Business Plan & 08/09 Progress Report). Client must confirm before enabling.
+  amount: "[SEED AMOUNT — TBC]",
   amountLabel: "Seed capital sought",
-  heading: "Seeking $10M in seed capital.",
+  heading: "Seeking [SEED AMOUNT — TBC] in seed capital.",
   body: "Seed investment will fund the development activities required to advance the Kootenay Green Hydrogen Project toward a final investment decision. Detailed financials, the capital plan, and investor terms are shared with qualified investors under a mutual non-disclosure agreement.",
   cta: { label: "Request the Investor Package", href: "#contact" },
 } as const;
