@@ -18,8 +18,12 @@ export function Investment() {
             <ButtonLink href={investment.cta.href}>{investment.cta.label}</ButtonLink>
           </div>
         </div>
-        <div className="border-t border-yellow pt-6 md:col-span-4 md:border-t-0 md:border-l md:pt-0 md:pl-10">
-          <p className="font-heading text-6xl font-bold text-yellow md:text-7xl">{investment.amount}</p>
+        {/* The figure sizes to its own column (container-query units) and only breaks between
+            words, so a short amount ("$5M") and the longer placeholder both fit at every width. */}
+        <div className="@container border-t border-yellow pt-6 md:col-span-4 md:border-t-0 md:border-l md:pt-0 md:pl-10">
+          <p className="font-heading text-[clamp(2.25rem,15cqi,4.5rem)] leading-none font-bold text-balance text-yellow [overflow-wrap:normal]">
+            {investment.amount}
+          </p>
           <p className="type-label mt-3 text-white/80">{investment.amountLabel}</p>
         </div>
       </Reveal>

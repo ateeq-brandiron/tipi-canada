@@ -32,10 +32,10 @@ export function Team() {
     <Section id={team.id} tone="paper" eyebrow={team.eyebrow} heading={team.heading} intro={team.intro}>
       <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {team.members.map((member, i) => (
-          <Reveal as="li" key={member.name} delay={(i % 3) * 80} className="flex flex-col border border-line bg-white p-7">
+          <Reveal as="li" key={member.name} delay={(i % 3) * 80} className="flex flex-col border border-line bg-white p-[clamp(1.5rem,1.2rem+1vw,1.75rem)]">
             <Avatar member={member} />
             <h3 className="mt-6 font-heading text-xl font-bold leading-snug">{member.name}</h3>
-            <p className="mt-1 text-sm font-bold text-red">
+            <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-bold text-red">
               {member.role}
               {member.needsApproval && <ReviewBadge>Bio pending approval</ReviewBadge>}
             </p>

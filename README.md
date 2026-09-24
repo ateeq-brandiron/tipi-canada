@@ -76,7 +76,7 @@ NDA requests are tagged `[NDA REQUEST]` in the subject line.
 
 - WCAG 2.2 AA colour pairings (see [`docs/brand-tokens.md`](docs/brand-tokens.md)), a skip link, visible focus rings, a native `<details>` FAQ, and labelled form errors with focus management.
 - `prefers-reduced-motion` disables all scroll animation. Content is visible without JavaScript.
-- Lighthouse on the production build (local): **Mobile 94 / 100 / 100 / 100**, **Desktop 100 / 100 / 100 / 100** (Performance / Accessibility / Best Practices / SEO). axe-core: 0 violations.
+- Lighthouse on the production build (local): **Mobile 94–97 / 100 / 100 / 100**, **Desktop 100 / 100 / 100 / 100** (Performance / Accessibility / Best Practices / SEO). axe-core: 0 violations.
 
 ## Deploying to Vercel with Squarespace DNS
 

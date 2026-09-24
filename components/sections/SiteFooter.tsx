@@ -17,10 +17,10 @@ export function SiteFooter({ links }: { links: NavLink[] }) {
           </div>
 
           <nav aria-label="Footer" className="md:col-span-7">
-            <ul className="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
+            <ul className="grid grid-cols-2 gap-x-6 sm:grid-cols-3">
               {links.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-white/85 hover:text-yellow">
+                  <a href={link.href} className="inline-flex min-h-11 min-w-11 items-center text-white/85 hover:text-yellow">
                     {link.label}
                   </a>
                 </li>

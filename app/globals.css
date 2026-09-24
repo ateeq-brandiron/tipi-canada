@@ -42,8 +42,24 @@
 /* Base                                                                       */
 /* -------------------------------------------------------------------------- */
 
+/*
+ * Responsive layout tokens. Fluid values (clamp) replace per-breakpoint steps so
+ * spacing and type scale smoothly from 320px phones to 2560px displays.
+ */
+:root {
+  --header-h: 4rem; /* 64px sticky header on phones */
+  --section-y: clamp(4rem, 2.75rem + 5vw, 7rem); /* 64px → 112px */
+  --section-head-gap: clamp(2.5rem, 2rem + 2.5vw, 4rem); /* heading block → content */
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2rem); /* container side padding: 16px → 32px */
+}
+@media (min-width: 768px) {
+  :root {
+    --header-h: 5rem; /* 80px */
+  }
+}
+
 html {
-  scroll-padding-top: 5.5rem; /* sticky nav height */
+  scroll-padding-top: calc(var(--header-h) + 0.5rem); /* anchor targets clear the sticky header */
   -webkit-text-size-adjust: 100%;
 }
 
@@ -63,54 +79,47 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Type scale — Brand Guide V10 */
+/* Long words, names and URLs wrap instead of forcing overflow; paragraphs avoid orphans. */
+:where(h1, h2, h3, h4, p, li, dt, dd, blockquote, figcaption, label, summary) {
+  overflow-wrap: break-word;
+}
+:where(p, li, dd, blockquote) {
+  text-wrap: pretty;
+}
+:where(h1, h2, h3) {
+  text-wrap: balance;
+}
+
+/* Type scale — Brand Guide V10, made fluid. */
 @layer components {
   .type-h1 {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 2.25rem; /* 36px */
-    line-height: 1.1;
+    /* 32px at 320 → 48px from ~1000px. Brand spec is 36–48; the 32px floor is used
+       only below ~370px so "Powered by Water." still fits on one line. */
+    font-size: clamp(2rem, 1.35rem + 2.9vw, 3rem);
+    line-height: 1.08;
     letter-spacing: -0.01em;
-  }
-  @media (min-width: 768px) {
-    .type-h1 {
-      font-size: 3rem; /* 48px */
-    }
   }
 
   .type-h2 {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 1.625rem; /* 26px */
-    line-height: 1.2;
+    font-size: clamp(1.625rem, 1.3rem + 1.25vw, 2rem); /* 26px → 32px */
+    line-height: 1.18;
     letter-spacing: -0.005em;
-  }
-  @media (min-width: 768px) {
-    .type-h2 {
-      font-size: 2rem; /* 32px */
-    }
   }
 
   .type-subhead {
     font-family: var(--font-sans);
     font-weight: 700;
-    font-size: 1.125rem; /* 18px */
+    font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem); /* 18px → 20px */
     line-height: 1.35;
-  }
-  @media (min-width: 768px) {
-    .type-subhead {
-      font-size: 1.25rem; /* 20px */
-    }
   }
 
   .type-lead {
-    font-size: 1.0625rem; /* 17px */
+    font-size: clamp(1.0625rem, 1.03rem + 0.15vw, 1.125rem); /* 17px → 18px */
     line-height: 1.65;
-  }
-  @media (min-width: 768px) {
-    .type-lead {
-      font-size: 1.125rem; /* 18px */
-    }
   }
 
   .type-label {
@@ -120,6 +129,19 @@ body {
     line-height: 1.4;
     letter-spacing: 0.14em;
     text-transform: uppercase;
+  }
+
+  /* Shared page container: one max width and one fluid gutter everywhere. */
+  .container-page {
+    width: 100%;
+    max-width: 72rem; /* 1152px */
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+  @media (min-width: 1536px) {
+    .container-page {
+      max-width: 80rem; /* 1280px on large displays so content doesn't feel lost */
+    }
   }
 }
 

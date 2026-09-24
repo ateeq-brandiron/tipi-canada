@@ -57,7 +57,7 @@ export function ContactForm() {
       key={formKey}
       action={formAction}
       noValidate
-      className="bg-white p-6 text-black sm:p-8 md:p-10"
+      className="bg-white p-[clamp(1.25rem,1rem+2vw,2.5rem)] text-black"
       aria-describedby="form-privacy"
     >
       <div ref={statusRef} tabIndex={-1} aria-live="polite">

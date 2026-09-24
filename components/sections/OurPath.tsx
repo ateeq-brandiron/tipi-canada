@@ -60,17 +60,19 @@ function StepIcon({ name }: { name: PathIcon }) {
 export function OurPath() {
   return (
     <Section id={path.id} tone="white" eyebrow={path.eyebrow} heading={path.heading} intro={path.intro}>
-      <ol className="relative grid gap-10 md:grid-cols-5 md:gap-6">
-        {/* Connecting line: vertical on mobile, horizontal on desktop. */}
-        <span aria-hidden="true" className="absolute left-6 top-6 bottom-6 w-px bg-line md:hidden" />
-        <span aria-hidden="true" className="absolute left-6 right-6 top-6 hidden h-px bg-line md:block" />
+      <ol className="relative grid gap-8 lg:grid-cols-5 lg:gap-6">
+        {/* Connecting line: per-step vertical connectors below lg, one horizontal rule from lg. */}
+        <span aria-hidden="true" className="absolute left-6 right-6 top-6 hidden h-px bg-line lg:block" />
 
         {path.steps.map((step, i) => (
-          <Reveal as="li" key={step.title} delay={i * 80} className="relative flex gap-5 md:flex-col md:gap-0">
+          <Reveal as="li" key={step.title} delay={i * 80} className="relative flex gap-5 lg:flex-col lg:gap-0">
+            {i < path.steps.length - 1 && (
+              <span aria-hidden="true" className="absolute top-12 -bottom-8 left-6 w-px bg-line lg:hidden" />
+            )}
             <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-black bg-white text-forest">
               <StepIcon name={step.icon} />
             </span>
-            <div className="md:mt-6">
+            <div className="min-w-0 max-w-xl pt-1 lg:mt-6 lg:pt-0">
               <p className="type-label text-red">
                 <span className="sr-only">Step </span>
                 {String(i + 1).padStart(2, "0")}
@@ -82,7 +84,7 @@ export function OurPath() {
         ))}
       </ol>
 
-      <Reveal className="mt-16 grid gap-4 border-t border-line pt-10 md:grid-cols-12">
+      <Reveal className="mt-(--section-head-gap) grid gap-4 border-t border-line pt-10 md:grid-cols-12 md:gap-8">
         <h3 className="type-subhead md:col-span-4">{path.power.title}</h3>
         <p className="text-ink-muted md:col-span-8">{path.power.body}</p>
       </Reveal>

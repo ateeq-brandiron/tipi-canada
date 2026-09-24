@@ -23,7 +23,7 @@ export function isDark(tone: Tone) {
 }
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 ${className}`}>{children}</div>;
+  return <div className={`container-page ${className}`}>{children}</div>;
 }
 
 type SectionProps = {
@@ -53,12 +53,12 @@ export function Section({
     <section
       id={id}
       aria-labelledby={heading ? headingId : undefined}
-      className={`relative overflow-hidden py-20 md:py-28 ${toneClasses[tone]} ${className}`}
+      className={`relative overflow-hidden py-(--section-y) ${toneClasses[tone]} ${className}`}
     >
       {decoration}
       <Container className="relative">
         {(eyebrow || heading || intro) && (
-          <Reveal className="mb-12 max-w-3xl md:mb-16">
+          <Reveal className="mb-(--section-head-gap) max-w-3xl">
             {eyebrow && <p className={`type-label mb-4 ${eyebrowClasses[tone]}`}>{eyebrow}</p>}
             {heading && (
               <h2 id={headingId} className="type-h2 text-balance">

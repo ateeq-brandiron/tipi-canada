@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { NavLink } from "@/content/site";
 import { PrimaryLogo } from "@/components/ui/Logo";
 import { buttonClasses } from "@/components/ui/Button";
@@ -11,16 +11,42 @@ type Props = {
   homeLabel: string;
 };
 
+/** Breakpoint (Tailwind `lg`) at which the full desktop navigation fits. */
+const DESKTOP_QUERY = "(min-width: 1024px)";
+
 export function SiteHeader({ links, cta, homeLabel }: Props) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>("");
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
-  // Close the mobile menu on Escape.
+  const close = () => setOpen(false);
+
+  // While the mobile menu is open: lock page scroll, move focus into the menu,
+  // close on Escape, and close automatically if the viewport grows to desktop.
   useEffect(() => {
     if (!open) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    const root = document.documentElement;
+    const previousOverflow = root.style.overflow;
+    root.style.overflow = "hidden";
+    menuRef.current?.querySelector<HTMLElement>("a")?.focus();
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    const mq = window.matchMedia(DESKTOP_QUERY);
+    const onChange = (e: MediaQueryListEvent) => e.matches && setOpen(false);
+
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    mq.addEventListener("change", onChange);
+    return () => {
+      root.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKey);
+      mq.removeEventListener("change", onChange);
+    };
   }, [open]);
 
   // Highlight the section currently in view.
@@ -47,21 +73,27 @@ export function SiteHeader({ links, cta, homeLabel }: Props) {
       >
         Skip to content
       </a>
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
-        <a href="#top" aria-label={`${homeLabel}, back to top`} className="shrink-0 py-2">
+      <div className="container-page flex h-(--header-h) items-center justify-between gap-4 lg:gap-6">
+        {/* Logo: 40px tall on phones, 50px from md. The link keeps a ≥44px tap area. */}
+        <a
+          href="#top"
+          aria-label={`${homeLabel}, back to top`}
+          onClick={() => close()}
+          className="flex h-11 shrink-0 items-center [&_img]:h-10 [&_img]:w-auto md:[&_img]:h-[50px]"
+        >
           <PrimaryLogo height={50} priority />
         </a>
 
-        <nav aria-label="Primary" className="hidden lg:block">
-          <ul className="flex items-center gap-6">
+        <nav aria-label="Primary" className="hidden min-w-0 lg:block">
+          <ul className="flex items-center gap-1 xl:gap-3">
             {links.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   aria-current={active === link.href ? "true" : undefined}
-                  className={`relative py-2 text-sm font-semibold transition-colors hover:text-black ${
+                  className={`relative inline-flex h-11 min-w-11 items-center justify-center px-2 text-sm font-semibold whitespace-nowrap transition-colors hover:text-black ${
                     active === link.href
-                      ? "text-black after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:bg-red"
+                      ? "text-black after:absolute after:inset-x-2 after:bottom-1.5 after:h-0.5 after:bg-red"
                       : "text-ink-muted"
                   }`}
                 >
@@ -72,7 +104,7 @@ export function SiteHeader({ links, cta, homeLabel }: Props) {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-3">
           {/* Wrapper controls visibility: the button's own inline-flex would override `hidden`. */}
           <div className="hidden md:block">
             <a href={cta.href} className={`${buttonClasses("solid-dark")} min-h-11 px-5 text-sm`}>
@@ -80,6 +112,7 @@ export function SiteHeader({ links, cta, homeLabel }: Props) {
             </a>
           </div>
           <button
+            ref={toggleRef}
             type="button"
             className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-line lg:hidden"
             aria-expanded={open}
@@ -94,31 +127,38 @@ export function SiteHeader({ links, cta, homeLabel }: Props) {
         </div>
       </div>
 
-      <nav
+      {/* Mobile / tablet menu: a full-height panel under the header, scrollable if the
+          viewport is short (e.g. phones in landscape). Page scroll is locked while open. */}
+      <div
         id="mobile-menu"
-        aria-label="Primary mobile"
+        ref={menuRef}
         hidden={!open}
-        className="border-t border-line bg-white lg:hidden"
+        className="absolute inset-x-0 top-full h-[calc(100dvh-var(--header-h))] overflow-y-auto overscroll-contain border-t border-line bg-white lg:hidden"
       >
-        <ul className="mx-auto max-w-6xl px-4 py-3 sm:px-6">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="block border-b border-line py-3.5 text-base font-semibold last:border-0"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-          <li className="pt-4 pb-2 md:hidden">
-            <a href={cta.href} onClick={() => setOpen(false)} className={`${buttonClasses("solid-dark")} w-full`}>
-              {cta.label}
-            </a>
-          </li>
-        </ul>
-      </nav>
+        <nav aria-label="Primary mobile" className="container-page py-4">
+          <ul>
+            {links.map((link) => (
+              <li key={link.href} className="border-b border-line">
+                <a
+                  href={link.href}
+                  aria-current={active === link.href ? "true" : undefined}
+                  onClick={() => close()}
+                  className="flex min-h-14 items-center text-lg font-semibold aria-[current=true]:text-red"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a
+            href={cta.href}
+            onClick={() => close()}
+            className={`${buttonClasses("solid-dark")} mt-6 w-full md:hidden`}
+          >
+            {cta.label}
+          </a>
+        </nav>
+      </div>
     </header>
   );
 }

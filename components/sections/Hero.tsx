@@ -9,7 +9,7 @@ export function Hero() {
       <Linework variant="river" className="text-yellow/35" />
       <Linework variant="ridge" className="text-white/12" />
 
-      <Container className="relative py-20 md:py-32">
+      <Container className="relative py-[clamp(4rem,2.5rem+7vw,8rem)]">
         <div className="max-w-3xl">
           <p className="type-label mb-6 text-yellow">{hero.eyebrow}</p>
           <h1 id="hero-heading" className="type-h1 text-balance">
@@ -29,7 +29,7 @@ export function Hero() {
           </div>
         </div>
 
-        <dl className="mt-16 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-white/25 pt-8 md:mt-20 md:grid-cols-4">
+        <dl className="mt-[clamp(3rem,2rem+4vw,5rem)] grid grid-cols-2 gap-x-6 gap-y-8 border-t border-white/25 pt-8 md:grid-cols-4">
           {hero.facts.map((fact) => (
             <div key={fact.label} className="flex flex-col">
               <dt className="type-label order-2 mt-1 text-white/80">{fact.label}</dt>

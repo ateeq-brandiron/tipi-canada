@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 type Variant = "primary" | "solid-dark" | "outline-light" | "outline-dark";
 
 const base =
-  "inline-flex min-h-12 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-sm px-6 py-3 text-[0.9375rem] font-bold leading-tight transition-colors duration-150";
+  "inline-flex min-h-12 max-w-full items-center justify-center gap-2 rounded-sm px-6 py-3 text-center text-[0.9375rem] font-bold leading-tight transition-colors duration-150 sm:whitespace-nowrap";
 
 const variants: Record<Variant, string> = {
   // Yellow / Black — approved "maximum clarity" pairing.

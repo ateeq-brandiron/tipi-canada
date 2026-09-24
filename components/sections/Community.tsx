@@ -81,7 +81,7 @@ export function Community() {
 
       <div className="mt-16 grid gap-px overflow-hidden border border-white/25 bg-white/25 md:grid-cols-2">
         {[benefits, safeguards].map((block, i) => (
-          <Reveal key={block.title} delay={i * 80} className="bg-forest p-7 md:p-10">
+          <Reveal key={block.title} delay={i * 80} className="bg-forest p-[clamp(1.5rem,1rem+2vw,2.5rem)]">
             <h3 className="type-subhead">{block.title}</h3>
             <p className="mt-3 text-white/90">{block.body}</p>
           </Reveal>
