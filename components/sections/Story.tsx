@@ -5,19 +5,31 @@ import { ImageSlot } from "@/components/ui/ImageSlot";
 
 export function Story() {
   return (
-    <Section id={story.id} tone="white" eyebrow={story.eyebrow} heading={story.heading}>
+    <Section id={story.id} tone="white" labelledBy={`${story.id}-heading`}>
+      {/* The heading sits in the left column so the birds can start level with it and fill the right column. */}
       <div className="grid gap-10 md:grid-cols-12 md:gap-10 lg:gap-16">
-        <Reveal className="space-y-5 text-ink-muted md:col-span-7">
-          {story.paragraphs.map((p, i) => (
-            <p key={i} className={i === story.paragraphs.length - 1 ? "type-lead text-black" : "type-lead"}>
-              {p}
-            </p>
-          ))}
+        <Reveal className="md:col-span-7">
+          <p className="type-label mb-4 text-red">{story.eyebrow}</p>
+          <h2 id={`${story.id}-heading`} className="type-h2 text-balance">
+            {story.heading}
+          </h2>
+          <div className="mt-(--section-head-gap) space-y-5 text-ink-muted">
+            {story.paragraphs.map((p, i) => (
+              <p key={i} className={i === story.paragraphs.length - 1 ? "type-lead text-black" : "type-lead"}>
+                {p}
+              </p>
+            ))}
+          </div>
         </Reveal>
 
-        <Reveal className="md:col-span-5" delay={100}>
-          <ImageSlot image={story.image} sizes="(min-width: 1024px) 40vw, 100vw" className="aspect-[4/3] w-full" />
-          <figure className="mt-8 border-l-2 border-yellow pl-5">
+        <Reveal className="md:col-span-5 md:self-center" delay={100}>
+          {/* The artwork is cropped tight to the birds; from lg it runs slightly past its column (white ground). */}
+          <ImageSlot
+            image={story.image}
+            sizes="(min-width: 1536px) 700px, (min-width: 768px) 50vw, 100vw"
+            className="aspect-[2156/1338] w-full lg:-ml-[8%] lg:w-[116%]"
+          />
+          <figure className="mt-10 border-l-2 border-yellow pl-5">
             <figcaption className="type-label mb-2 text-red">{story.vision.label}</figcaption>
             <blockquote className="font-heading text-xl font-bold leading-snug">{story.vision.text}</blockquote>
           </figure>

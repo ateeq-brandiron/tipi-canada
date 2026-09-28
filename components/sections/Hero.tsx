@@ -33,10 +33,11 @@ export function Hero() {
           </div>
         </div>
 
-        <dl className="mt-[clamp(3rem,2rem+4vw,5rem)] grid grid-cols-2 gap-x-6 gap-y-8 border-t border-white/25 pt-8 md:grid-cols-4">
+        {/* Facts: 2×2 grid below lg; from lg one row with equal gaps between the four items. */}
+        <dl className="mt-[clamp(3rem,2rem+4vw,5rem)] grid grid-cols-2 gap-x-6 gap-y-8 border-t border-white/25 pt-8 lg:flex lg:justify-between lg:gap-8">
           {hero.facts.map((fact) => (
             <div key={fact.label} className="flex flex-col">
-              <dt className="type-label order-2 mt-1 text-white/80">{fact.label}</dt>
+              <dt className="type-label order-2 mt-1 text-white/80 lg:whitespace-nowrap">{fact.label}</dt>
               <dd className="order-1 font-heading text-2xl font-bold md:text-[1.75rem]">{fact.value}</dd>
             </div>
           ))}

@@ -38,6 +38,8 @@ type SectionProps = {
   className?: string;
   /** Extra decorative layer rendered behind the content (e.g. linework). */
   decoration?: ReactNode;
+  /** Id of a heading the section renders itself (when `heading` is not passed). */
+  labelledBy?: string;
 };
 
 export function Section({
@@ -49,12 +51,13 @@ export function Section({
   children,
   className = "",
   decoration,
+  labelledBy,
 }: SectionProps) {
   const headingId = id ? `${id}-heading` : undefined;
   return (
     <section
       id={id}
-      aria-labelledby={heading ? headingId : undefined}
+      aria-labelledby={heading ? headingId : labelledBy}
       className={`relative overflow-hidden py-(--section-y) ${toneClasses[tone]} ${className}`}
     >
       {decoration}
