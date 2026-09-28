@@ -54,13 +54,13 @@ The creative director supplied these images (Sept 2026). Originals are kept in `
 | --- | --- | --- |
 | `hero-turtle.jpg` | Hero | Photo on top on phones; right-hand ~56% panel from 1024px. Zoomed from the top (1.35× phones, 1.2× at lg, 1.4× from xl) so the turtle reads larger while the treeline stays in frame; fades into navy. From 1024px it is shifted down (top fade) so the turtle sits level with the headline. |
 | `birds-watercolour.jpg` | Our Story | `object-contain`, never cropped; its white ground blends into the section. |
-| `water-to-hydrogen.jpg` (deck cover) | Our Path banner | 16:9 on phones, 21:9 from 640px. |
+| `water-to-hydrogen.jpg` (deck cover) | Our Path section background | Full-bleed behind the section; washed to white towards the copy (left) and the stepper (bottom), most visible top-right. |
 | `waves.jpg` | "Powered by BC's clean grid" callout | Navy overlay: vertical on phones, horizontal from md, for text contrast. |
 | `feathers-dark.jpg` | Key Differentiators background | 80% opacity under a black gradient. |
 | `feathers-bright.jpg` | Community background | Luminosity blend at 30% under a forest gradient. |
 | `swirl-painterly.jpg` | Contact background | 80% opacity under navy/55. |
 
-Swap an image by replacing the file in `/public/images/`, or change the path in `content/site.ts` (`hero.image`, `story.image`, `path.image`, `textures`).
+Swap an image by replacing the file in `/public/images/`, or change the path in `content/site.ts` (`hero.image`, `story.image`, `path.background`, `textures`).
 
 - The thin linework (`components/ui/Linework.tsx`) remains as a quiet connective device in the hero.
 - Client feedback: avoid industrial hydrogen-tank imagery.

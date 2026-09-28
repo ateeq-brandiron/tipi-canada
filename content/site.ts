@@ -305,11 +305,8 @@ export const path = {
       body: "Local industry, commercial vehicles, and retail customers use clean hydrogen in place of higher-emission diesel fuels.",
     },
   ] satisfies PathStep[],
-  image: {
-    src: "/images/water-to-hydrogen.jpg",
-    alt: "Illustration of water breaking into hydrogen bubbles",
-    focus: "50% 45%",
-  } satisfies ImageSlot,
+  /** Decorative section background (aria-hidden), so no alt text. */
+  background: { src: "/images/water-to-hydrogen.jpg", focus: "60% 40%" } satisfies Texture,
   power: {
     title: "Powered by BC's clean grid",
     body: "Electricity will come from the BC Hydro system, with the nearby Kootenay Canal Generating Station as a key regional source. The project is working with BC Hydro on formal transmission connection studies to establish a reliable, high-voltage supply to the site.",

@@ -1,5 +1,4 @@
 import { path, textures, type PathIcon } from "@/content/site";
-import { ImageSlot } from "@/components/ui/ImageSlot";
 import { BackgroundTexture } from "@/components/ui/BackgroundTexture";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
@@ -61,14 +60,24 @@ function StepIcon({ name }: { name: PathIcon }) {
 
 export function OurPath() {
   return (
-    <Section id={path.id} tone="white" eyebrow={path.eyebrow} heading={path.heading} intro={path.intro}>
-      <Reveal className="mb-(--section-head-gap)">
-        <ImageSlot
-          image={path.image}
-          sizes="(min-width: 1536px) 1216px, (min-width: 1152px) 1088px, 100vw"
-          className="aspect-[16/9] w-full sm:aspect-[21/9]"
-        />
-      </Reveal>
+    <Section
+      id={path.id}
+      tone="white"
+      eyebrow={path.eyebrow}
+      heading={path.heading}
+      intro={path.intro}
+      decoration={
+        /* "Water becoming hydrogen" as the section background: most visible top-right behind the
+           heading, washed to white towards the left (copy) and the bottom (stepper) for AA contrast. */
+        <>
+          <BackgroundTexture
+            texture={path.background}
+            overlay="bg-gradient-to-b from-white/70 via-white/85 to-white md:bg-gradient-to-r md:from-white md:via-white/75 md:to-white/20"
+          />
+          <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-b from-transparent via-white/90 to-white" />
+        </>
+      }
+    >
       <ol className="relative grid gap-8 lg:grid-cols-5 lg:gap-6">
         {/* Connecting line: per-step vertical connectors below lg, one horizontal rule from lg. */}
         <span aria-hidden="true" className="absolute left-6 right-6 top-6 hidden h-px bg-line lg:block" />
