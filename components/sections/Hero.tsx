@@ -43,15 +43,17 @@ export function Hero() {
         </dl>
       </Container>
 
-      {/* Photo: visually first on small screens (order-first), a right-hand panel on desktop. */}
-      <div className="relative order-first aspect-[16/10] w-full sm:aspect-[16/8] lg:absolute lg:inset-y-0 lg:right-0 lg:order-none lg:aspect-auto lg:w-[56%]">
+      {/* Photo: visually first on small screens (order-first), a right-hand panel on desktop.
+          The photo is zoomed from the top (treeline stays in frame) so the turtle reads larger;
+          the panel clips the zoom, and `sizes` requests extra resolution to keep it sharp. */}
+      <div className="relative order-first aspect-[16/10] w-full overflow-hidden sm:aspect-[16/8] lg:absolute lg:inset-y-0 lg:right-0 lg:order-none lg:aspect-auto lg:w-[56%]">
         <Image
           src={hero.image.src}
           alt={hero.image.alt}
           fill
           priority
-          sizes="(min-width: 1024px) 56vw, 100vw"
-          className="object-cover"
+          sizes="(min-width: 1024px) 80vw, 140vw"
+          className="origin-[50%_0%] scale-[1.35] object-cover lg:origin-[50%_0%] lg:scale-[1.2] xl:origin-[62%_0%] xl:scale-[1.4]"
           style={{ objectPosition: hero.image.focus }}
         />
         {/* Fades that blend the photo into the navy: bottom on small screens, left + bottom on desktop. */}

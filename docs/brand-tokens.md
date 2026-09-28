@@ -52,7 +52,7 @@ The creative director supplied these images (Sept 2026). Originals are kept in `
 
 | File | Where it's used | Treatment |
 | --- | --- | --- |
-| `hero-turtle.jpg` | Hero | Photo on top on phones; right-hand ~56% panel from 1024px. Fades into navy. Focal point on the turtle (`50% 4%`). |
+| `hero-turtle.jpg` | Hero | Photo on top on phones; right-hand ~56% panel from 1024px. Zoomed from the top (1.35× phones, 1.2× at lg, 1.4× from xl) so the turtle reads larger while the treeline stays in frame; fades into navy. |
 | `birds-watercolour.jpg` | Our Story | `object-contain`, never cropped; its white ground blends into the section. |
 | `water-to-hydrogen.jpg` (deck cover) | Our Path banner | 16:9 on phones, 21:9 from 640px. |
 | `waves.jpg` | "Powered by BC's clean grid" callout | Navy overlay: vertical on phones, horizontal from md, for text contrast. |
