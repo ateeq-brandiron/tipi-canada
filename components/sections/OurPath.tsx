@@ -72,9 +72,9 @@ export function OurPath() {
         <>
           <BackgroundTexture
             texture={path.background}
-            overlay="bg-gradient-to-b from-white/70 via-white/85 to-white md:bg-gradient-to-r md:from-white md:via-white/75 md:to-white/20"
+            overlay="bg-gradient-to-b from-white/45 via-white/70 to-white/90 md:bg-gradient-to-r md:from-white/95 md:via-white/45 md:to-transparent"
           />
-          <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-b from-transparent via-white/90 to-white" />
+          <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent via-white/60 to-white" />
         </>
       }
     >
