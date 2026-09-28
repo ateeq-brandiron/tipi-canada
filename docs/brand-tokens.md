@@ -52,7 +52,7 @@ The creative director supplied these images (Sept 2026). Originals are kept in `
 
 | File | Where it's used | Treatment |
 | --- | --- | --- |
-| `hero-turtle.jpg` | Hero | Photo on top on phones; right-hand ~56% panel from 1024px. Zoomed from the top (1.35× phones, 1.2× at lg, 1.4× from xl) so the turtle reads larger while the treeline stays in frame; fades into navy. From 1024px it is shifted down (top fade) so the turtle sits level with the headline. |
+| `hero-turtle.jpg` | Hero | Photo on top on phones; right-hand ~56% panel from 1024px. Zoomed from the top (1.35× phones, 1.2× at lg, 1.4× from xl) so the turtle reads larger while the treeline stays in frame; fades into navy. From 1024px it is shifted down (top fade) so the turtle sits level with the headline. From 1536px the panel width follows the page container and the zoom is removed, so the turtle stays in proportion on wide screens. |
 | `birds-watercolour.jpg` | Our Story | `object-contain`, never cropped; its white ground blends into the section. |
 | `water-to-hydrogen.jpg` (deck cover) | Our Path section background | Full-bleed behind the section; washed to white towards the copy (left) and the stepper (bottom), most visible top-right. |
 | `waves.jpg` | "Powered by BC's clean grid" callout | Navy overlay: vertical on phones, horizontal from md, for text contrast. |

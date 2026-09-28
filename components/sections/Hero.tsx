@@ -47,14 +47,14 @@ export function Hero() {
           The photo is zoomed from the top (treeline stays in frame) so the turtle reads larger, and on desktop
           it is shifted down so the turtle sits level with the headline;
           the panel clips the zoom, and `sizes` requests extra resolution to keep it sharp. */}
-      <div className="relative order-first aspect-[16/10] w-full overflow-hidden sm:aspect-[16/8] lg:absolute lg:inset-y-0 lg:right-0 lg:order-none lg:aspect-auto lg:w-[56%]">
+      <div className="relative order-first aspect-[16/10] w-full overflow-hidden sm:aspect-[16/8] lg:absolute lg:inset-y-0 lg:right-0 lg:order-none lg:aspect-auto lg:w-[56%] 2xl:w-[calc(50%+4rem)]">
         <Image
           src={hero.image.src}
           alt={hero.image.alt}
           fill
           priority
           sizes="(min-width: 1024px) 80vw, 140vw"
-          className="origin-[50%_0%] scale-[1.35] object-cover lg:origin-[50%_0%] lg:scale-[1.2] xl:origin-[62%_0%] xl:scale-[1.4] lg:translate-y-[clamp(4.5rem,2.5rem+4vw,7.5rem)]"
+          className="origin-[50%_0%] scale-[1.35] object-cover lg:origin-[50%_0%] lg:scale-[1.2] xl:origin-[62%_0%] xl:scale-[1.4] 2xl:origin-[50%_0%] 2xl:scale-100 lg:translate-y-[clamp(4.5rem,2.5rem+4vw,7.5rem)]"
           style={{ objectPosition: hero.image.focus }}
         />
         {/* Fades that blend the photo into the navy: bottom on small screens, left, top and bottom on desktop. */}
