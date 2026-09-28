@@ -1,13 +1,17 @@
-import { company, contact } from "@/content/site";
+import { company, contact, textures } from "@/content/site";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
-import { Linework } from "@/components/ui/Linework";
+import { BackgroundTexture } from "@/components/ui/BackgroundTexture";
 import { ContactForm } from "./ContactForm";
 
 export function Contact() {
   const { email, phone, emailIsPlaceholder } = company.contact;
   return (
-    <Section id={contact.id} tone="forest" decoration={<Linework variant="ridge" className="text-yellow/20" />}>
+    <Section
+      id={contact.id}
+      tone="navy"
+      decoration={<BackgroundTexture texture={textures.swirl} imageClassName="opacity-80" overlay="bg-navy/55" />}
+    >
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <Reveal className="lg:col-span-5">
           <p className="type-label mb-4 text-yellow">{contact.eyebrow}</p>

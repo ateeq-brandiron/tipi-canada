@@ -80,8 +80,27 @@ export type ImageSlot = {
   src?: string;
   alt: string;
   /** Shown on the placeholder until a real photo is supplied. */
-  placeholderNote: string;
+  placeholderNote?: string;
+  /** CSS object-position focal point, e.g. "50% 10%". Defaults to centre. */
+  focus?: string;
+  /** "contain" for illustrations that must never be cropped. Defaults to "cover". */
+  fit?: "cover" | "contain";
 };
+
+/** Decorative background texture (always aria-hidden). */
+export type Texture = { src: string; focus?: string };
+
+/*
+ * Imagery supplied by the Brand Iron creative director (Sept 2026), stored in
+ * /assets/source-images and exported web-sized to /public/images.
+ * VERIFY: licences for the two Shutterstock files and usage rights for the others.
+ */
+export const textures = {
+  feathersDark: { src: "/images/feathers-dark.jpg", focus: "50% 40%" },
+  feathersBright: { src: "/images/feathers-bright.jpg", focus: "50% 50%" },
+  swirl: { src: "/images/swirl-painterly.jpg", focus: "50% 50%" },
+  waves: { src: "/images/waves.jpg", focus: "50% 25%" },
+} satisfies Record<string, Texture>;
 
 /* -------------------------------------------------------------------------- */
 /* Company & site                                                             */
@@ -161,6 +180,11 @@ export const hero = {
   headline: ["Powered by Water.", "Driven by Vision."],
   valueStatement:
     "Turtle Island Power Inc. is a majority Indigenous-owned green hydrogen developer advancing the Kootenay Green Hydrogen Project, a proposed 100 MW facility powered by British Columbia's clean electricity grid.",
+  image: {
+    src: "/images/hero-turtle.jpg",
+    alt: "A turtle surfacing in clear water beside a forested shoreline",
+    focus: "50% 4%",
+  } satisfies ImageSlot,
   primaryCta: { label: "Request Investor Information", href: "#contact" },
   secondaryCta: { label: "Explore the Project", href: "#path" },
   facts: [
@@ -208,8 +232,9 @@ export const story = {
     ] satisfies Card[],
   },
   image: {
-    alt: "The Kootenay River valley near Blewett, British Columbia",
-    placeholderNote: "[PHOTO — Kootenay landscape near the project site. Client to supply.]",
+    src: "/images/birds-watercolour.jpg",
+    alt: "Watercolour illustration of two birds in flight, their wings marked with Indigenous-inspired patterns",
+    fit: "contain",
   } satisfies ImageSlot,
 } as const;
 
@@ -280,6 +305,11 @@ export const path = {
       body: "Local industry, commercial vehicles, and retail customers use clean hydrogen in place of higher-emission diesel fuels.",
     },
   ] satisfies PathStep[],
+  image: {
+    src: "/images/water-to-hydrogen.jpg",
+    alt: "Illustration of water breaking into hydrogen bubbles",
+    focus: "50% 45%",
+  } satisfies ImageSlot,
   power: {
     title: "Powered by BC's clean grid",
     body: "Electricity will come from the BC Hydro system, with the nearby Kootenay Canal Generating Station as a key regional source. The project is working with BC Hydro on formal transmission connection studies to establish a reliable, high-voltage supply to the site.",

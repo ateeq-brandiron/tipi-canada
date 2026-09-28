@@ -1,4 +1,5 @@
-import { differentiators } from "@/content/site";
+import { differentiators, textures } from "@/content/site";
+import { BackgroundTexture } from "@/components/ui/BackgroundTexture";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -9,6 +10,13 @@ export function Differentiators() {
       tone="black"
       eyebrow={differentiators.eyebrow}
       heading={differentiators.heading}
+      decoration={
+        <BackgroundTexture
+          texture={textures.feathersDark}
+          imageClassName="opacity-80"
+          overlay="bg-gradient-to-b from-black/75 via-black/55 to-black/80"
+        />
+      }
     >
       <ul className="grid gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
         {differentiators.items.map((item, i) => (

@@ -16,6 +16,10 @@
    * re-check contrast (must stay >= 4.5:1 against white).
    */
   --tipi-forest: #1f3d2b;
+  /* Deep-water navy sampled from the hero turtle photograph so the photo blends
+     seamlessly (deck look). Derived, not a Brand Guide colour: white text 18:1,
+     yellow 12:1. Never use red text on it. */
+  --tipi-navy: #010f29;
 
   /* Derived neutrals (not brand colours; used for hierarchy only). */
   --tipi-paper: #f5f4ef; /* quiet section background */
@@ -29,6 +33,7 @@
   --color-red: var(--tipi-red);
   --color-black: var(--tipi-black);
   --color-forest: var(--tipi-forest);
+  --color-navy: var(--tipi-navy);
   --color-paper: var(--tipi-paper);
   --color-ink-muted: var(--tipi-ink-muted);
   --color-line: var(--tipi-line);

@@ -1,7 +1,7 @@
-import { community } from "@/content/site";
+import { community, textures } from "@/content/site";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
-import { Linework } from "@/components/ui/Linework";
+import { BackgroundTexture } from "@/components/ui/BackgroundTexture";
 
 function formatPercent(n: number) {
   return `${Number.isInteger(n) ? n : n.toFixed(1)}%`;
@@ -67,7 +67,13 @@ export function Community() {
       tone="forest"
       eyebrow={community.eyebrow}
       heading={community.heading}
-      decoration={<Linework variant="river" className="text-white/10" />}
+      decoration={
+        <BackgroundTexture
+          texture={textures.feathersBright}
+          imageClassName="opacity-30 mix-blend-luminosity"
+          overlay="bg-gradient-to-b from-forest/80 via-forest/70 to-forest/90"
+        />
+      }
     >
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <Reveal className="lg:col-span-5">

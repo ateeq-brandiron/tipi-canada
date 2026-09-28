@@ -1,12 +1,13 @@
 import type { ReactNode } from "react";
 import { Reveal } from "./Reveal";
 
-export type Tone = "white" | "paper" | "forest" | "black";
+export type Tone = "white" | "paper" | "forest" | "navy" | "black";
 
 const toneClasses: Record<Tone, string> = {
   white: "bg-white text-black",
   paper: "bg-paper text-black",
   forest: "bg-forest text-white",
+  navy: "bg-navy text-white",
   black: "bg-black text-white",
 };
 
@@ -15,11 +16,12 @@ const eyebrowClasses: Record<Tone, string> = {
   white: "text-red", // Red on White 5.2:1
   paper: "text-red", // Red on Paper 4.8:1
   forest: "text-yellow", // Yellow on Forest
+  navy: "text-yellow", // Yellow on Navy 12:1
   black: "text-yellow", // Yellow on Black 13.7:1
 };
 
 export function isDark(tone: Tone) {
-  return tone === "forest" || tone === "black";
+  return tone === "forest" || tone === "navy" || tone === "black";
 }
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {

@@ -1,16 +1,20 @@
+import Image from "next/image";
 import { hero } from "@/content/site";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Section";
 import { Linework } from "@/components/ui/Linework";
 
+/*
+ * Layout
+ * - Phones/tablets: the photo sits on top (turtle framed), fading into navy, then the copy.
+ * - Desktop (lg+): the photo fills the right ~55% and fades left into the navy behind the copy.
+ * The copy comes first in the DOM so the headline is read before the image.
+ */
 export function Hero() {
   return (
-    <section id="top" aria-labelledby="hero-heading" className="relative overflow-hidden bg-forest text-white">
-      <Linework variant="river" className="text-yellow/35" />
-      <Linework variant="ridge" className="text-white/12" />
-
-      <Container className="relative py-[clamp(4rem,2.5rem+7vw,8rem)]">
-        <div className="max-w-3xl">
+    <section id="top" aria-labelledby="hero-heading" className="relative flex flex-col overflow-hidden bg-navy text-white">
+      <Container className="relative z-10 -mt-12 pb-[clamp(3.5rem,2.5rem+4vw,6rem)] sm:-mt-20 lg:mt-0 lg:pt-[clamp(6rem,4rem+5vw,9rem)]">
+        <div className="max-w-2xl lg:max-w-[34rem] xl:max-w-xl">
           <p className="type-label mb-6 text-yellow">{hero.eyebrow}</p>
           <h1 id="hero-heading" className="type-h1 text-balance">
             {hero.headline.map((line) => (
@@ -19,7 +23,7 @@ export function Hero() {
               </span>
             ))}
           </h1>
-          <p className="type-lead mt-6 max-w-2xl text-white/90">{hero.valueStatement}</p>
+          <p className="type-lead mt-6 text-white/90">{hero.valueStatement}</p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
             <ButtonLink href={hero.primaryCta.href}>{hero.primaryCta.label}</ButtonLink>
@@ -38,6 +42,24 @@ export function Hero() {
           ))}
         </dl>
       </Container>
+
+      {/* Photo: visually first on small screens (order-first), a right-hand panel on desktop. */}
+      <div className="relative order-first aspect-[16/10] w-full sm:aspect-[16/8] lg:absolute lg:inset-y-0 lg:right-0 lg:order-none lg:aspect-auto lg:w-[56%]">
+        <Image
+          src={hero.image.src}
+          alt={hero.image.alt}
+          fill
+          priority
+          sizes="(min-width: 1024px) 56vw, 100vw"
+          className="object-cover"
+          style={{ objectPosition: hero.image.focus }}
+        />
+        {/* Fades that blend the photo into the navy: bottom on small screens, left + bottom on desktop. */}
+        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-navy" />
+        <div aria-hidden="true" className="absolute inset-y-0 left-0 hidden w-2/3 bg-gradient-to-r from-navy via-navy/60 to-transparent lg:block" />
+      </div>
+
+      <Linework variant="river" className="z-0 text-yellow/20" />
     </section>
   );
 }

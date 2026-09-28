@@ -37,6 +37,15 @@ Placeholders and open items before launch. Search the code for `PLACEHOLDER`, `V
 - [ ] **"No direct regional competition"** (Messaging Platform).
 - [ ] **Patent-pending status** of the fire-retardant perimeter fence (for Mark McKellar's bio).
 
+## Imagery (added 28 Sept 2026)
+
+- [ ] **Licences:** confirm the two Shutterstock images (`shutterstock_2519998867` waves, `shutterstock_2609285383` feathers) are licensed for web use by the client or the agency.
+- [ ] **Rights / AI disclosure:** confirm usage rights for the turtle, birds, swirl, dark-feathers and "water becoming hydrogen" images, and whether any are AI-generated or AI-edited (the turtle file is named "extended"). Some clients and Nations prefer disclosure.
+- [ ] **Cultural review:** the birds illustration carries generic "Indigenous-inspired" chevron and sun motifs, and feathers carry cultural significance for many Nations. The client (and ideally Ktunaxa contacts) should confirm this treatment feels respectful and not pan-Indigenous or stereotypical, per Brand Guide V10.
+- [ ] **Subject accuracy:** the hero shows a sea turtle, which is symbolic of Turtle Island rather than a Kootenay species. Confirm this is intended.
+- [ ] **Real project photography** (Blewett site, Kootenay River, team in the field) is still wanted for credibility. It can replace or join these images later.
+- [ ] **Source files:** the originals were uploaded into `app/` and were moved to `assets/source-images/` (`app/` is the Next.js routing folder). Upload future images to `public/images/`.
+
 ## Brand
 
 - [ ] **Forest hex** from the designer. Replace `--tipi-forest` in `app/globals.css`, `FOREST` in `app/opengraph-image.tsx`, and `theme_color` in `app/manifest.ts`.

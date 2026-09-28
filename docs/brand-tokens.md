@@ -11,6 +11,7 @@ Implemented in [`app/globals.css`](../app/globals.css) as CSS custom properties 
 | `--tipi-red` | `#CA3630` | Logo SVG `.cls-2` | Human-centred emphasis |
 | `--tipi-black` | `#000000` | Logo SVG (default fill) | Confirm no custom off-black is intended |
 | `--tipi-forest` | **TODO** (temp `#1F3D2B`) | Not in the guide text or logo files | **Designer to supply the official hex** |
+| `--tipi-navy` | `#010F29` | Derived: sampled from the hero turtle photo | Deep-water navy for the Hero and Contact sections, so the photo blends seamlessly (deck look). White text 18:1, yellow 12:1. **Never put red text on it.** |
 | `--tipi-paper` | `#F5F4EF` | Derived neutral | Quiet section background; not a brand colour |
 | `--tipi-ink-muted` | `#3F3F3F` | Derived neutral | Secondary text on light surfaces |
 
@@ -45,8 +46,21 @@ Implemented in [`app/globals.css`](../app/globals.css) as CSS custom properties 
 - **Usage:** primary lockup on the white nav bar (clean background); white mark on the black footer; colour mark for the favicon and Apple touch icon.
 - **Rules:** never distort, recolour, rotate or add effects. Clear space = height of the turtle's inner circular core.
 
-## Linework and imagery
+## Imagery and textures
 
-- Thin 1px flowing lines (river / ridge), `components/ui/Linework.tsx`, at low opacity behind content: a "quiet connective device".
-- There is no photography yet. Placeholders mark where real landscape, clean-tech or field-work photography goes.
+The creative director supplied these images (Sept 2026). Originals are kept in `/assets/source-images/`; web-sized copies (2400px wide, mozjpeg quality 80) are in `/public/images/`. next/image serves AVIF/WebP at the right size for each device.
+
+| File | Where it's used | Treatment |
+| --- | --- | --- |
+| `hero-turtle.jpg` | Hero | Photo on top on phones; right-hand ~56% panel from 1024px. Fades into navy. Focal point on the turtle (`50% 4%`). |
+| `birds-watercolour.jpg` | Our Story | `object-contain`, never cropped; its white ground blends into the section. |
+| `water-to-hydrogen.jpg` (deck cover) | Our Path banner | 16:9 on phones, 21:9 from 640px. |
+| `waves.jpg` | "Powered by BC's clean grid" callout | Navy overlay: vertical on phones, horizontal from md, for text contrast. |
+| `feathers-dark.jpg` | Key Differentiators background | 80% opacity under a black gradient. |
+| `feathers-bright.jpg` | Community background | Luminosity blend at 30% under a forest gradient. |
+| `swirl-painterly.jpg` | Contact background | 80% opacity under navy/55. |
+
+Swap an image by replacing the file in `/public/images/`, or change the path in `content/site.ts` (`hero.image`, `story.image`, `path.image`, `textures`).
+
+- The thin linework (`components/ui/Linework.tsx`) remains as a quiet connective device in the hero.
 - Client feedback: avoid industrial hydrogen-tank imagery.

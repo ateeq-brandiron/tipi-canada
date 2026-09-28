@@ -1,4 +1,6 @@
-import { path, type PathIcon } from "@/content/site";
+import { path, textures, type PathIcon } from "@/content/site";
+import { ImageSlot } from "@/components/ui/ImageSlot";
+import { BackgroundTexture } from "@/components/ui/BackgroundTexture";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -60,6 +62,13 @@ function StepIcon({ name }: { name: PathIcon }) {
 export function OurPath() {
   return (
     <Section id={path.id} tone="white" eyebrow={path.eyebrow} heading={path.heading} intro={path.intro}>
+      <Reveal className="mb-(--section-head-gap)">
+        <ImageSlot
+          image={path.image}
+          sizes="(min-width: 1536px) 1216px, (min-width: 1152px) 1088px, 100vw"
+          className="aspect-[16/9] w-full sm:aspect-[21/9]"
+        />
+      </Reveal>
       <ol className="relative grid gap-8 lg:grid-cols-5 lg:gap-6">
         {/* Connecting line: per-step vertical connectors below lg, one horizontal rule from lg. */}
         <span aria-hidden="true" className="absolute left-6 right-6 top-6 hidden h-px bg-line lg:block" />
@@ -84,9 +93,13 @@ export function OurPath() {
         ))}
       </ol>
 
-      <Reveal className="mt-(--section-head-gap) grid gap-4 border-t border-line pt-10 md:grid-cols-12 md:gap-8">
-        <h3 className="type-subhead md:col-span-4">{path.power.title}</h3>
-        <p className="text-ink-muted md:col-span-8">{path.power.body}</p>
+      {/* "Powered by BC's clean grid" callout on the water-wave texture (hydro power). */}
+      <Reveal className="relative mt-(--section-head-gap) overflow-hidden bg-navy text-white">
+        <BackgroundTexture texture={textures.waves} overlay="bg-gradient-to-b from-navy/90 via-navy/80 to-navy/55 md:bg-gradient-to-r md:from-navy/90 md:via-navy/70 md:to-navy/25" />
+        <div className="relative grid gap-4 p-[clamp(1.5rem,1rem+2.5vw,3rem)] md:grid-cols-12 md:gap-8">
+          <h3 className="type-subhead md:col-span-4">{path.power.title}</h3>
+          <p className="text-white/90 md:col-span-8">{path.power.body}</p>
+        </div>
       </Reveal>
     </Section>
   );
