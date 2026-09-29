@@ -43,8 +43,10 @@ content/site.ts         ALL copy and image paths (typed). Components never hard-
 lib/config.ts           env-driven flags and settings
 lib/{inquiry,email,jsonld,brand-assets}.ts
 public/brand/           official logo SVGs (only the viewBox was trimmed)
-public/images/          web-sized images (2400px, mozjpeg)
-assets/source-images/   original uploads from the creative director (not served)
+public/images/sections/ web-sized photos used by one section (2400px, mozjpeg)
+public/images/textures/ web-sized background textures
+assets/source-images/   original uploads, named to match their web copies (not served)
+assets/README.md        where every asset type goes, naming and sizing rules
 docs/                   sources, brand tokens, content decisions and review, client checklist
 ```
 
@@ -57,7 +59,7 @@ docs/                   sources, brand tokens, content decisions and review, cli
 - **Sections:** build on `<Section tone=...>` and reuse `ImageSlot`/`BackgroundTexture` for imagery. Put text on photos only over an overlay that keeps WCAG AA contrast.
 - **Colours:** Brand Guide V10 (Yellow `#FDCB25`, White, Red `#CA3630`, Black). Navy `#010F29` is derived from the hero photo. Forest `#1F3D2B` is a **temporary placeholder** until the designer supplies the hex. Never use yellow text on white, or red text on navy.
 - **Accessibility:** WCAG 2.2 AA, 44px tap targets, visible focus, `prefers-reduced-motion` respected. Content must render without JS.
-- **Images:** use `next/image` with correct `sizes`. New web images go to `public/images/`, and originals to `assets/source-images/` (never into `app/`).
+- **Images:** use `next/image` with correct `sizes`. New web images go to `public/images/sections/` or `public/images/textures/`, headshots to `public/images/team/`, and originals to `assets/source-images/` (never into `app/`). Follow `assets/README.md` for naming. `public/brand/` stays put, because JSON-LD publishes `/brand/logo-primary.svg`.
 
 ## Environment
 

@@ -48,7 +48,7 @@ Implemented in [`app/globals.css`](../app/globals.css) as CSS custom properties 
 
 ## Imagery and textures
 
-The creative director supplied these images (Sept 2026). Originals are kept in `/assets/source-images/`; web-sized copies (2400px wide, mozjpeg quality 80) are in `/public/images/`. next/image serves AVIF/WebP at the right size for each device.
+The creative director supplied these images (Sept 2026). Originals are kept in `/assets/source-images/`; web-sized copies (2400px wide, mozjpeg quality 80) are in `/public/images/sections/` and `/public/images/textures/` (mapping in [`assets/README.md`](../assets/README.md)). next/image serves AVIF/WebP at the right size for each device.
 
 | File | Where it's used | Treatment |
 | --- | --- | --- |
@@ -60,7 +60,7 @@ The creative director supplied these images (Sept 2026). Originals are kept in `
 | `feathers-bright.jpg` | Community background | Luminosity blend at 30% under a forest gradient. |
 | `swirl-painterly.jpg` | Contact background | 80% opacity under navy/55. |
 
-Swap an image by replacing the file in `/public/images/`, or change the path in `content/site.ts` (`hero.image`, `story.image`, `path.background`, `textures`).
+Swap an image by replacing the file in `/public/images/sections/` or `/public/images/textures/`, or change the path in `content/site.ts` (`hero.image`, `story.image`, `path.background`, `textures`).
 
 - The thin linework (`components/ui/Linework.tsx`) remains as a quiet connective device in the hero.
 - Client feedback: avoid industrial hydrogen-tank imagery.

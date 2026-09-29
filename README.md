@@ -27,8 +27,8 @@ CI (`.github/workflows/ci.yml`) runs install, lint, typecheck and build on every
 **All copy lives in [`content/site.ts`](content/site.ts).** Components never hard-code text, so copy edits never touch them.
 
 - Placeholders are written as `[… — TBC]`. Statements needing confirmation carry `// VERIFY:` comments.
-- Team headshots go in `/public/team/`. Set `photo` on the team member; initials show until then.
-- Photos go in `/public/images/`. Set `src` on the relevant image slot.
+- Team headshots go in `/public/images/team/`. Set `photo` on the team member; initials show until then.
+- Section photos go in `/public/images/sections/` and background textures in `/public/images/textures/`. Set `src` on the relevant image slot. See [`assets/README.md`](assets/README.md) for where every asset type goes and how to name and size it.
 - Sources, conflicts and the approval checklist are in [`/docs`](docs/README.md).
 
 ## Structure
@@ -49,6 +49,9 @@ lib/
   email.ts              env-selected email provider (log | resend)
   jsonld.ts             Organization + WebSite + FAQPage structured data
 public/brand/           official logo SVGs (viewBox trimmed only)
+public/images/          web-sized images: sections/ (per-section photos), textures/ (backgrounds)
+assets/                 original uploads (not served) and the asset guide
+.github/workflows/      CI (lint, typecheck, build)
 docs/                   sources, brand tokens, decisions, client checklist
 ```
 
