@@ -57,7 +57,7 @@ export type TeamMember = {
   bio: string;
   initials: string;
   /**
-   * Path under /public, e.g. "/team/mark-mckellar.jpg".
+   * Path under /public, e.g. "/images/team/mark-mckellar.jpg".
    * Leave undefined to render the initials fallback.
    */
   photo?: string;
@@ -96,10 +96,10 @@ export type Texture = { src: string; focus?: string };
  * VERIFY: licences for the two Shutterstock files and usage rights for the others.
  */
 export const textures = {
-  feathersDark: { src: "/images/feathers-dark.jpg", focus: "50% 40%" },
-  feathersBright: { src: "/images/feathers-bright.jpg", focus: "50% 50%" },
-  swirl: { src: "/images/swirl-painterly.jpg", focus: "50% 50%" },
-  waves: { src: "/images/waves.jpg", focus: "50% 25%" },
+  feathersDark: { src: "/images/textures/feathers-dark.jpg", focus: "50% 40%" },
+  feathersBright: { src: "/images/textures/feathers-bright.jpg", focus: "50% 50%" },
+  swirl: { src: "/images/textures/swirl-painterly.jpg", focus: "50% 50%" },
+  waves: { src: "/images/textures/waves.jpg", focus: "50% 25%" },
 } satisfies Record<string, Texture>;
 
 /* -------------------------------------------------------------------------- */
@@ -181,7 +181,7 @@ export const hero = {
   valueStatement:
     "Turtle Island Power Inc. is a majority Indigenous-owned green hydrogen developer advancing the Kootenay Green Hydrogen Project, a proposed 100 MW facility powered by British Columbia's clean electricity grid.",
   image: {
-    src: "/images/hero-turtle.jpg",
+    src: "/images/sections/hero-turtle.jpg",
     alt: "A turtle surfacing in clear water beside a forested shoreline",
     focus: "50% 4%",
   } satisfies ImageSlot,
@@ -232,7 +232,7 @@ export const story = {
     ] satisfies Card[],
   },
   image: {
-    src: "/images/birds-watercolour.jpg",
+    src: "/images/sections/birds-watercolour.jpg",
     alt: "Watercolour illustration of two birds in flight, their wings marked with Indigenous-inspired patterns",
     fit: "contain",
   } satisfies ImageSlot,
@@ -306,7 +306,7 @@ export const path = {
     },
   ] satisfies PathStep[],
   /** Decorative section background (aria-hidden), so no alt text. */
-  background: { src: "/images/water-to-hydrogen.jpg", focus: "60% 40%" } satisfies Texture,
+  background: { src: "/images/sections/water-to-hydrogen.jpg", focus: "60% 40%" } satisfies Texture,
   power: {
     title: "Powered by BC's clean grid",
     body: "Electricity will come from the BC Hydro system, with the nearby Kootenay Canal Generating Station as a key regional source. The project is working with BC Hydro on formal transmission connection studies to establish a reliable, high-voltage supply to the site.",
@@ -461,8 +461,8 @@ export const team = {
       initials: "MH",
       role: "Principal Independent Consultant — Technical, Techno-Economic & Project Development",
       bio: "A clean-energy scientist with more than 20 years of experience in hydrogen and fuel cell technologies across academia, national research, and industry. He is a former Ballard Power researcher with research experience at the National Research Council of Canada (NRC), and holds a Ph.D. in Engineering from the University of Waterloo.",
-      // Headshot exists in Drive: add as /public/team/mohammed-hussain.jpg, then set photo.
-      // photo: "/team/mohammed-hussain.jpg",
+      // Headshot exists in Drive: add as /public/images/team/mohammed-hussain.jpg, then set photo.
+      // photo: "/images/team/mohammed-hussain.jpg",
       needsApproval: true,
     },
     {
@@ -470,8 +470,8 @@ export const team = {
       initials: "MM",
       role: "Safety, Fire Prevention & Security Advisor",
       bio: "A retired Captain of the Vancouver Fire Department, where he served from 1990 to 2022. Mark advises on safety, fire prevention, and security for the project, including industrial and wildland-interface risk, perimeter protection, and prevention systems from development through operation.",
-      // Headshot exists in Drive: add as /public/team/mark-mckellar.jpg, then set photo.
-      // photo: "/team/mark-mckellar.jpg",
+      // Headshot exists in Drive: add as /public/images/team/mark-mckellar.jpg, then set photo.
+      // photo: "/images/team/mark-mckellar.jpg",
     },
     {
       name: "Russell Hunt",
