@@ -100,6 +100,9 @@ export const textures = {
   feathersBright: { src: "/images/textures/feathers-bright.jpg", focus: "50% 50%" },
   swirl: { src: "/images/textures/swirl-painterly.jpg", focus: "50% 50%" },
   waves: { src: "/images/textures/waves.jpg", focus: "50% 25%" },
+  // Added Sept 2026 (resized for upload). VERIFY: licence for shutterstock_2034489200 (blue).
+  greenPainterly: { src: "/images/textures/green-painterly.jpg", focus: "50% 50%" },
+  blueWatercolour: { src: "/images/textures/blue-watercolour.jpg", focus: "50% 100%" },
 } satisfies Record<string, Texture>;
 
 /* -------------------------------------------------------------------------- */

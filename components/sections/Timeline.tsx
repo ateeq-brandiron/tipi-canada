@@ -1,11 +1,24 @@
-import { timeline } from "@/content/site";
+import { timeline, textures } from "@/content/site";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { ReviewBadge } from "@/components/ui/ReviewBadge";
+import { BackgroundTexture } from "@/components/ui/BackgroundTexture";
 
 export function Timeline() {
   return (
-    <Section id={timeline.id} tone="white" eyebrow={timeline.eyebrow} heading={timeline.heading}>
+    <Section
+      id={timeline.id}
+      tone="white"
+      eyebrow={timeline.eyebrow}
+      heading={timeline.heading}
+      decoration={
+        /* Blue watercolour, washed to white so the existing dark text keeps AA contrast. */
+        <BackgroundTexture
+          texture={textures.blueWatercolour}
+          overlay="bg-gradient-to-b from-white/97 from-25% via-white/80 to-white/60"
+        />
+      }
+    >
       <ol className="relative grid gap-10 lg:grid-cols-4 lg:gap-8">
         <span aria-hidden="true" className="absolute left-0 right-0 top-[7px] hidden h-px bg-line lg:block" />
 
