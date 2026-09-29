@@ -26,7 +26,7 @@ Placeholders and open items before launch. Search the code for `PLACEHOLDER`, `V
 - [ ] **Hero headline:** "Powered by Water. Driven by Vision." (client line) is in use; confirm it replaces the Brand Guide line in the hero.
 - [ ] **Investment ask.** Confirm the seed amount. It is now `[SEED AMOUNT — TBC]`, because sources say $1–5M, $2–7M and $10M. Then set `NEXT_PUBLIC_SHOW_INVESTMENT_ASK=true`.
 - [ ] **Hubs:** confirm Castlegar (2031) and Trail (2033) are final. The July documents and the letter to the Nations say Cranbrook.
-- [ ] **Nations:** confirm the territorial statement ("within ʔamakʔis Ktunaxa", now also shown in the band under the hero with a review badge) and naming, and that the Ktunaxa agree to appear in the ownership chart.
+- [ ] **Nations:** confirm the territorial statement ("within ʔamakʔis Ktunaxa") and naming, and that the Ktunaxa agree to appear in the ownership chart.
 - [ ] **Economic claims:** confirm or soften "robust economics / designed to deliver long-term returns" (see content-review §2.4).
 - [ ] **Legal:** confirm the "TIPI Coin" reference in the public disclaimer (§1).
 - [ ] **Legal:** confirm the form's privacy note and investor-type options (no "accredited investor" self-certification is collected).

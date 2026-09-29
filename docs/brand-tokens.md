@@ -65,5 +65,4 @@ The creative director supplied these images (Sept 2026). Originals are kept in `
 Swap an image by replacing the file in `/public/images/sections/` or `/public/images/textures/`, or change the path in `content/site.ts` (`hero.image`, `story.image`, `path.background`, `textures`).
 
 - The thin linework (`components/ui/Linework.tsx`) remains as a quiet connective device in the hero.
-- A slim band under the hero (`components/sections/Territory.tsx`) pairs the unaltered colour turtle mark with the approved territorial statement from `content/site.ts` (`territory`).
 - Client feedback: avoid industrial hydrogen-tank imagery.

@@ -3,7 +3,6 @@ import { SHOW_INVESTMENT_ASK } from "@/lib/config";
 import { buildJsonLd, jsonLdScript } from "@/lib/jsonld";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { Hero } from "@/components/sections/Hero";
-import { Territory } from "@/components/sections/Territory";
 import { Story } from "@/components/sections/Story";
 import { Opportunity } from "@/components/sections/Opportunity";
 import { OurPath } from "@/components/sections/OurPath";
@@ -31,7 +30,6 @@ export default function Home() {
       <SiteHeader links={links} cta={nav.cta} homeLabel={company.name} />
       <main id="main" tabIndex={-1} className="outline-none">
         <Hero />
-        <Territory />
         <Story />
         <Opportunity />
         <OurPath />
