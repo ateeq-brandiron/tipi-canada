@@ -18,6 +18,9 @@ npm run dev                  # http://localhost:3000
 | `npm run build` | Production build (also type-checks) |
 | `npm start` | Serve the production build |
 | `npm run lint` | ESLint |
+| `npm run typecheck` | Generate Next route types, then `tsc --noEmit` |
+
+CI (`.github/workflows/ci.yml`) runs install, lint, typecheck and build on every push and pull request. Deployment stays with Vercel.
 
 ## Editing content
 
