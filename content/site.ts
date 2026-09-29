@@ -354,6 +354,16 @@ export const differentiators = {
 /* 6. Community & Partnership  (FAQ wording only: Q3, Q4, Q9; Disclaimer §5)    */
 /* -------------------------------------------------------------------------- */
 
+/*
+ * Territorial statement, verbatim from the approved Legal Disclaimer §5. Shown in the band under
+ * the hero and as the first sentence of the Community consent note.
+ * VERIFY: territorial statement and Ktunaxa naming (docs/client-checklist.md, "Nations").
+ */
+export const territory = {
+  statement: "The Project is located within ʔamakʔis Ktunaxa.",
+  needsApproval: true,
+} as const;
+
 export const community = {
   id: "community",
   eyebrow: "Community & Partnership",
@@ -378,8 +388,7 @@ export const community = {
     body: "The project requires environmental reviews, a Good Neighbour assessment of local road impacts, and ongoing engagement with the Ktunaxa Nation. Land acquisition itself is conditional on financing, feasibility, legal review, environmental assessment, Nation participation, and related due-diligence steps. The design prioritizes low-carbon production and long-term operational responsibility.",
   },
   // From the approved Legal Disclaimer, §5.
-  consentNote:
-    "The Project is located within ʔamakʔis Ktunaxa. Any participation by the Ktunaxa Nation, including any residual equity interest, is subject to the Nation's free, prior and informed decision-making processes conducted through its own institutions.",
+  consentNote: `${territory.statement} Any participation by the Ktunaxa Nation, including any residual equity interest, is subject to the Nation's free, prior and informed decision-making processes conducted through its own institutions.`,
 } as const;
 
 /* -------------------------------------------------------------------------- */

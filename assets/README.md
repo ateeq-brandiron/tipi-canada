@@ -38,6 +38,6 @@ GitHub's web upload stops at 25 MB, so resize larger originals before uploading.
 | `feathers-bright-shutterstock-2609285383.jpg` | `textures/feathers-bright.jpg` | shutterstock_2609285383.jpg |
 | `swirl-painterly.jpg` | `textures/swirl-painterly.jpg` | Swirl Painterly_Abstract  copy.jpg |
 | `waves-shutterstock-2519998867.jpg` | `textures/waves.jpg` | shutterstock_2519998867.jpg |
-| `waves-blue-watercolour-shutterstock-2034489200.jpg` | not used yet | shutterstock_2034489200.jpg (resized for upload) |
-| `texture-green-painterly-ethos.jpg` | not used yet | ETHOS GREEN BACKGROUND.jpg (resized for upload) |
+| `waves-blue-watercolour-shutterstock-2034489200.jpg` | `textures/blue-watercolour.jpg` | shutterstock_2034489200.jpg (resized for upload) |
+| `texture-green-painterly-ethos.jpg` | `textures/green-painterly.jpg` (cropped to 4:3) | ETHOS GREEN BACKGROUND.jpg (resized for upload) |
 | `feathers-colour-closeup.png` | not used yet | Feathers.png |

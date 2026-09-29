@@ -26,7 +26,7 @@ Placeholders and open items before launch. Search the code for `PLACEHOLDER`, `V
 - [ ] **Hero headline:** "Powered by Water. Driven by Vision." (client line) is in use; confirm it replaces the Brand Guide line in the hero.
 - [ ] **Investment ask.** Confirm the seed amount. It is now `[SEED AMOUNT — TBC]`, because sources say $1–5M, $2–7M and $10M. Then set `NEXT_PUBLIC_SHOW_INVESTMENT_ASK=true`.
 - [ ] **Hubs:** confirm Castlegar (2031) and Trail (2033) are final. The July documents and the letter to the Nations say Cranbrook.
-- [ ] **Nations:** confirm the territorial statement ("within ʔamakʔis Ktunaxa") and naming, and that the Ktunaxa agree to appear in the ownership chart.
+- [ ] **Nations:** confirm the territorial statement ("within ʔamakʔis Ktunaxa", now also shown in the band under the hero with a review badge) and naming, and that the Ktunaxa agree to appear in the ownership chart.
 - [ ] **Economic claims:** confirm or soften "robust economics / designed to deliver long-term returns" (see content-review §2.4).
 - [ ] **Legal:** confirm the "TIPI Coin" reference in the public disclaimer (§1).
 - [ ] **Legal:** confirm the form's privacy note and investor-type options (no "accredited investor" self-certification is collected).
@@ -39,7 +39,7 @@ Placeholders and open items before launch. Search the code for `PLACEHOLDER`, `V
 
 ## Imagery (added 28 Sept 2026)
 
-- [ ] **Licences:** confirm the two Shutterstock images (`shutterstock_2519998867` waves, `shutterstock_2609285383` feathers) are licensed for web use by the client or the agency.
+- [ ] **Licences:** confirm the three Shutterstock images (`shutterstock_2519998867` waves, `shutterstock_2609285383` feathers, `shutterstock_2034489200` blue watercolour) and the "ETHOS green background" texture are licensed for web use by the client or the agency.
 - [ ] **Rights / AI disclosure:** confirm usage rights for the turtle, birds, swirl, dark-feathers and "water becoming hydrogen" images, and whether any are AI-generated or AI-edited (the turtle file is named "extended"). Some clients and Nations prefer disclosure.
 - [ ] **Cultural review:** the birds illustration carries generic "Indigenous-inspired" chevron and sun motifs, and feathers carry cultural significance for many Nations. The client (and ideally Ktunaxa contacts) should confirm this treatment feels respectful and not pan-Indigenous or stereotypical, per Brand Guide V10.
 - [ ] **Subject accuracy:** the hero shows a sea turtle, which is symbolic of Turtle Island rather than a Kootenay species. Confirm this is intended.

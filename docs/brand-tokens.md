@@ -57,10 +57,13 @@ The creative director supplied these images (Sept 2026). Originals are kept in `
 | `water-to-hydrogen.jpg` (deck cover) | Our Path section background | Full-bleed behind the section; washed to white towards the copy (left) and the stepper (bottom), most visible top-right. |
 | `waves.jpg` | "Powered by BC's clean grid" callout | Navy overlay: vertical on phones, horizontal from md, for text contrast. |
 | `feathers-dark.jpg` | Key Differentiators background | 80% opacity under a black gradient. |
-| `feathers-bright.jpg` | Community background | Luminosity blend at 30% under a forest gradient. |
+| `feathers-bright.jpg` | Not used since 29 Sept 2026 (Community now uses the green texture) | Kept in `public/images/textures/` for reuse. |
+| `green-painterly.jpg` ("ETHOS green background") | Community background | Cropped to 4:3 around the light-to-dark transition, under a forest gradient (90% top, 60% middle, 75% bottom). Measured text contrast ≥ 4.8:1. |
+| `blue-watercolour.jpg` (`shutterstock_2034489200`) | Timeline background | Bottom-anchored, under a white wash (97% over the top quarter, easing to 60%) so the existing dark text is unchanged. Measured text contrast ≥ 4.8:1. |
 | `swirl-painterly.jpg` | Contact background | 80% opacity under navy/55. |
 
 Swap an image by replacing the file in `/public/images/sections/` or `/public/images/textures/`, or change the path in `content/site.ts` (`hero.image`, `story.image`, `path.background`, `textures`).
 
 - The thin linework (`components/ui/Linework.tsx`) remains as a quiet connective device in the hero.
+- A slim band under the hero (`components/sections/Territory.tsx`) pairs the unaltered colour turtle mark with the approved territorial statement from `content/site.ts` (`territory`).
 - Client feedback: avoid industrial hydrogen-tank imagery.
