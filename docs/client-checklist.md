@@ -21,7 +21,9 @@ Placeholders and open items before launch. Search the code for `PLACEHOLDER`, `V
 - [ ] **All team bios and titles**, especially JJ McKellar's title and full-name display.
 - [ ] **2026 timeline entry** ("Development"). It is not a dated FAQ milestone.
 - [ ] **Value-chain copy** for Compression, Storage and Transport (derived from the draft).
-- [ ] **New connective copy:** section headings, intros and hero facts (see decision E5).
+- [ ] **New connective copy:** section headings, intros and hero facts (see decision E5), including the new "How we work" section's eyebrow and heading (E8).
+- [ ] **Voice icons:** confirm with the creative director that Voice Icons 1–6 map to Respectful, Purpose-Driven, Collaborative, Well-Researched, Strategic, Credible in that order.
+- [ ] **Differentiator icons:** Differ Icons 1 and 2 still to be received; then add all five to Key Differentiators.
 - [ ] **Ktunaxa naming:** "Ktunaxa First Nation" (FAQ Q3) vs "Ktunaxa Nation" (FAQ Q4, disclaimer).
 - [ ] **Hero headline:** "Powered by Water. Driven by Vision." (client line) is in use; confirm it replaces the Brand Guide line in the hero.
 - [ ] **Investment ask.** Confirm the seed amount. It is now `[SEED AMOUNT — TBC]`, because sources say $1–5M, $2–7M and $10M. Then set `NEXT_PUBLIC_SHOW_INVESTMENT_ASK=true`.

@@ -45,7 +45,7 @@ GitHub's web upload stops at 25 MB, so resize larger originals before uploading.
 
 ## Icon originals (`assets/source-icons/`)
 
-Received from the creative director on 29 Sept 2026 (Slack). PNG with transparency. None are used on the site yet.
+Received from the creative director on 29 Sept 2026 (Slack). PNG with transparency. Voice Icons 1–6 are used in the "How we work" section as `public/icons/voice-<trait>.png` (trimmed, 144px tall). Voice Icons_1 was exported as dark brown at ~64% opacity, which reads as tan on white; its web copy bakes in that tan (rgb 179,150,120) at full opacity so it looks the same on navy.
 
 | File | Likely meant for (Messaging Platform) | Originally named |
 | --- | --- | --- |
