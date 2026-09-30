@@ -12,6 +12,7 @@ Everything served by the website lives in `public/`. Original, full-size source 
 | A logo | `public/brand/` | `components/ui/Logo.tsx`, `lib/brand-assets.ts` |
 | An icon (SVG) | `public/icons/` (create it) | `next/image` or inline SVG component |
 | The original upload of any of the above | `assets/source-images/` | not referenced by code |
+| An original icon from the creative director | `assets/source-icons/` | not referenced by code; web copies go to `public/icons/` |
 
 Fonts are loaded through `next/font` in `app/layout.tsx` and don't need files. The favicon and Apple icon are generated from `app/icon.svg` and `app/apple-icon.tsx`.
 
@@ -41,3 +42,12 @@ GitHub's web upload stops at 25 MB, so resize larger originals before uploading.
 | `waves-blue-watercolour-shutterstock-2034489200.jpg` | `textures/blue-watercolour.jpg` | shutterstock_2034489200.jpg (resized for upload) |
 | `texture-green-painterly-ethos.jpg` | `textures/green-painterly.jpg` (cropped to 4:3) | ETHOS GREEN BACKGROUND.jpg (resized for upload) |
 | `feathers-colour-closeup.png` | not used yet | Feathers.png |
+
+## Icon originals (`assets/source-icons/`)
+
+Received from the creative director on 29 Sept 2026 (Slack). PNG with transparency. None are used on the site yet.
+
+| File | Likely meant for (Messaging Platform) | Originally named |
+| --- | --- | --- |
+| `voice-icons-1.png` … `voice-icons-6.png` | The six Voice traits: Respectful, Purpose-Driven, Collaborative, Well-Researched, Strategic, Credible (order to confirm) | Voice Icons_1.png … Voice Icons_6.png (`_4` was "Voice Icons_4png.png") |
+| `differ-icons-3.png`, `-4`, `-5` | Key Differentiators 3–5: Financially Sustainable, Repeatable Community Model, Strategic Regional Advantage. Icons 1 and 2 not received yet. | Differ Icons_3.png … Differ Icons_5.png |
