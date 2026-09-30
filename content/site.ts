@@ -242,6 +242,53 @@ export const story = {
 } as const;
 
 /* -------------------------------------------------------------------------- */
+/* How We Work  (Messaging Platform "Voice", icons by the creative director)    */
+/* -------------------------------------------------------------------------- */
+
+export type VoiceTrait = Card & { icon: { src: string; width: number; height: number } };
+
+// Trait wording verbatim from the Messaging Platform "Voice" section, except "honour" (Canadian
+// spelling, decision E4). Eyebrow and heading are new connective copy (decision E5).
+// VERIFY: icon-to-trait order (Voice Icons_1-6 assumed to follow the Messaging Platform order).
+export const voice = {
+  id: "how-we-work",
+  eyebrow: "Our Voice",
+  heading: "How we work.",
+  items: [
+    {
+      title: "Respectful",
+      body: "We honour people, communities, traditions, and the land with humility, allowing our actions and relationships to speak louder than our words.",
+      icon: { src: "/icons/voice-respectful.png", width: 144, height: 144 },
+    },
+    {
+      title: "Purpose-Driven",
+      body: "Every project is guided by a responsibility to leave our communities and the land better than we found them, creating lasting value for future generations.",
+      icon: { src: "/icons/voice-purpose-driven.png", width: 311, height: 144 },
+    },
+    {
+      title: "Collaborative",
+      body: "We believe the strongest solutions are built through partnership, bringing together Indigenous communities, industry, government, and innovation to create meaningful, lasting change.",
+      icon: { src: "/icons/voice-collaborative.png", width: 262, height: 144 },
+    },
+    {
+      title: "Well-Researched",
+      body: "We lead with research, experience, and informed decision-making, developing practical solutions grounded in technical expertise, market insight, and long-term thinking.",
+      icon: { src: "/icons/voice-well-researched.png", width: 160, height: 144 },
+    },
+    {
+      title: "Strategic",
+      body: "Every decision reflects careful planning, sound economics, and a long-term vision that balances environmental responsibility with commercial success.",
+      icon: { src: "/icons/voice-strategic.png", width: 144, height: 144 },
+    },
+    {
+      title: "Credible",
+      body: "We earn trust through transparency, technical understanding, and a commitment to delivering practical, financially sustainable solutions.",
+      icon: { src: "/icons/voice-credible.png", width: 188, height: 144 },
+    },
+  ] satisfies VoiceTrait[],
+} as const;
+
+/* -------------------------------------------------------------------------- */
 /* 3. The Opportunity  (FAQ Q2, Q6 + Messaging Platform value points)          */
 /* -------------------------------------------------------------------------- */
 

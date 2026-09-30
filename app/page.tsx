@@ -4,6 +4,7 @@ import { buildJsonLd, jsonLdScript } from "@/lib/jsonld";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { Hero } from "@/components/sections/Hero";
 import { Story } from "@/components/sections/Story";
+import { Voice } from "@/components/sections/Voice";
 import { Opportunity } from "@/components/sections/Opportunity";
 import { OurPath } from "@/components/sections/OurPath";
 import { Differentiators } from "@/components/sections/Differentiators";
@@ -31,6 +32,7 @@ export default function Home() {
       <main id="main" tabIndex={-1} className="outline-none">
         <Hero />
         <Story />
+        <Voice />
         <Opportunity />
         <OurPath />
         <Differentiators />
