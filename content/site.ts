@@ -245,11 +245,12 @@ export const story = {
 /* How We Work  (Messaging Platform "Voice", icons by the creative director)    */
 /* -------------------------------------------------------------------------- */
 
-export type VoiceTrait = Card & { icon: { src: string; width: number; height: number } };
+/** A card with one of the creative director's icons (decorative; rendered with alt=""). */
+export type IconCard = Card & { icon: { src: string; width: number; height: number } };
 
 // Trait wording verbatim from the Messaging Platform "Voice" section, except "honour" (Canadian
 // spelling, decision E4). Eyebrow and heading are new connective copy (decision E5).
-// VERIFY: icon-to-trait order (Voice Icons_1-6 assumed to follow the Messaging Platform order).
+// Icon-to-trait order (Voice Icons_1-6 in Messaging Platform order) confirmed by the creative director, 1 Oct 2026.
 export const voice = {
   id: "how-we-work",
   eyebrow: "Our Voice",
@@ -285,7 +286,7 @@ export const voice = {
       body: "We earn trust through transparency, technical understanding, and a commitment to delivering practical, financially sustainable solutions.",
       icon: { src: "/icons/voice-credible.png", width: 188, height: 144 },
     },
-  ] satisfies VoiceTrait[],
+  ] satisfies IconCard[],
 } as const;
 
 /* -------------------------------------------------------------------------- */
@@ -376,25 +377,30 @@ export const differentiators = {
       // Approved Messaging Platform: "An Indigenous-Owned Fully Green Hydrogen Supply Chain" (+ "Majority" per FAQ).
       title: "A Majority Indigenous-Owned, Fully Green Hydrogen Supply Chain",
       body: "Indigenous stewardship shapes not only who we are, but how we make decisions, build partnerships, and create long-term value.",
+      icon: { src: "/icons/differ-indigenous-owned-supply-chain.png", width: 85, height: 144 },
     },
     {
       title: "End-to-End Energy-as-a-Service Model",
       body: "From hydrogen production and storage to transportation and delivery, we provide a fully integrated clean energy solution designed to help organizations transition with confidence.",
+      icon: { src: "/icons/differ-energy-as-a-service.png", width: 83, height: 144 },
     },
     {
       title: "Financially Sustainable by Design",
       body: "Built on robust economics, government incentives, and commercial viability, our business model is designed to deliver long-term value while demonstrating that environmental responsibility and commercial success can move forward together.",
+      icon: { src: "/icons/differ-financially-sustainable.png", width: 144, height: 144 },
     },
     {
       title: "Repeatable Community Development Model",
       body: "Designed as a scalable blueprint, our approach can be adapted to strengthen Indigenous and rural communities across Canada.",
+      icon: { src: "/icons/differ-repeatable-community-model.png", width: 72, height: 144 },
     },
     {
       // VERIFY: Messaging Platform adds "with no direct regional competition". Omitted pending verification.
       title: "Strategic Regional Advantage",
       body: "Located in British Columbia's Kootenay region, near hydroelectric resources and regional mining operations, our project is positioned to support Canada's decarbonization goals.",
+      icon: { src: "/icons/differ-strategic-regional-advantage.png", width: 180, height: 144 },
     },
-  ] satisfies Card[],
+  ] satisfies IconCard[],
 } as const;
 
 /* -------------------------------------------------------------------------- */
