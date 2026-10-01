@@ -503,7 +503,8 @@ export const team = {
       initials: "DS",
       role: "Métis Founder & Project Lead",
       bio: "A Métis founder with hands-on leadership across oil and gas, mining, heavy construction, and large-scale industrial concrete construction. David leads strategy, capital formation, government relations, and Indigenous engagement for the Kootenay Green Hydrogen Project.",
-      // PLACEHOLDER: headshot not supplied.
+      // Head Shot 2 of the two supplied (30 Sept 2026): sharper, tighter framing.
+      photo: "/images/team/david-sedmak.jpg",
     },
     {
       name: "Johanna Jean (JJ) McKellar",
@@ -517,8 +518,7 @@ export const team = {
       initials: "MH",
       role: "Principal Independent Consultant — Technical, Techno-Economic & Project Development",
       bio: "A clean-energy scientist with more than 20 years of experience in hydrogen and fuel cell technologies across academia, national research, and industry. He is a former Ballard Power researcher with research experience at the National Research Council of Canada (NRC), and holds a Ph.D. in Engineering from the University of Waterloo.",
-      // Headshot exists in Drive: add as /public/images/team/mohammed-hussain.jpg, then set photo.
-      // photo: "/images/team/mohammed-hussain.jpg",
+      photo: "/images/team/mohammed-hussain.jpg",
       needsApproval: true,
     },
     {
@@ -526,8 +526,7 @@ export const team = {
       initials: "MM",
       role: "Safety, Fire Prevention & Security Advisor",
       bio: "A retired Captain of the Vancouver Fire Department, where he served from 1990 to 2022. Mark advises on safety, fire prevention, and security for the project, including industrial and wildland-interface risk, perimeter protection, and prevention systems from development through operation.",
-      // Headshot exists in Drive: add as /public/images/team/mark-mckellar.jpg, then set photo.
-      // photo: "/images/team/mark-mckellar.jpg",
+      photo: "/images/team/mark-mckellar.jpg",
     },
     {
       name: "Russell Hunt",
