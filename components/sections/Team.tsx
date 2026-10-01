@@ -5,16 +5,23 @@ import { Reveal } from "@/components/ui/Reveal";
 import { ReviewBadge } from "@/components/ui/ReviewBadge";
 
 function Avatar({ member }: { member: TeamMember }) {
-  if (member.photo) {
+  const { photo } = member;
+  if (photo) {
+    // The circle shows the photo's square `crop` window (fractions of the image width), so all
+    // headshots share the same face size and eye line however the source photo was framed.
+    const { x, y, size } = photo.crop;
     return (
-      <Image
-        src={member.photo}
-        alt={`Portrait of ${member.name}`}
-        width={96}
-        height={96}
-        sizes="96px"
-        className="h-24 w-24 rounded-full object-cover"
-      />
+      <span className="relative block h-24 w-24 shrink-0 overflow-hidden rounded-full">
+        <Image
+          src={photo.src}
+          alt={`Portrait of ${member.name}`}
+          width={photo.width}
+          height={photo.height}
+          sizes={`${Math.ceil(96 / size)}px`}
+          className="absolute h-auto max-w-none"
+          style={{ width: `${100 / size}%`, left: `${(-x / size) * 100}%`, top: `${(-y / size) * 100}%` }}
+        />
+      </span>
     );
   }
   return (

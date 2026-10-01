@@ -51,16 +51,26 @@ export type TimelineItem = {
   needsApproval?: boolean;
 };
 
+/**
+ * A headshot shown in the round team avatar. `crop` is the square window that fills the circle,
+ * as fractions of the image *width* (x, y = top-left corner, size = side), so every photo can be
+ * framed the same way in CSS without re-cropping the file: face width ~52% of the circle, eye
+ * line ~42% from the top.
+ */
+export type TeamPhoto = {
+  src: string;
+  width: number;
+  height: number;
+  crop: { x: number; y: number; size: number };
+};
+
 export type TeamMember = {
   name: string;
   role: string;
   bio: string;
   initials: string;
-  /**
-   * Path under /public, e.g. "/images/team/mark-mckellar.jpg".
-   * Leave undefined to render the initials fallback.
-   */
-  photo?: string;
+  /** Headshot. Leave undefined to render the initials fallback. */
+  photo?: TeamPhoto;
   /** True when the person has asked to approve their wording before publication. */
   needsApproval?: boolean;
 };
@@ -504,7 +514,7 @@ export const team = {
       role: "Métis Founder & Project Lead",
       bio: "A Métis founder with hands-on leadership across oil and gas, mining, heavy construction, and large-scale industrial concrete construction. David leads strategy, capital formation, government relations, and Indigenous engagement for the Kootenay Green Hydrogen Project.",
       // Head Shot 2 of the two supplied (30 Sept 2026): sharper, tighter framing.
-      photo: "/images/team/david-sedmak.jpg",
+      photo: { src: "/images/team/david-sedmak.jpg", width: 450, height: 800, crop: { x: 0.17, y: 0.426, size: 0.83 } },
     },
     {
       name: "Johanna Jean (JJ) McKellar",
@@ -518,7 +528,8 @@ export const team = {
       initials: "MH",
       role: "Principal Independent Consultant — Technical, Techno-Economic & Project Development",
       bio: "A clean-energy scientist with more than 20 years of experience in hydrogen and fuel cell technologies across academia, national research, and industry. He is a former Ballard Power researcher with research experience at the National Research Council of Canada (NRC), and holds a Ph.D. in Engineering from the University of Waterloo.",
-      photo: "/images/team/mohammed-hussain.jpg",
+      // Close selfie: the full width is the widest window available.
+      photo: { src: "/images/team/mohammed-hussain.jpg", width: 600, height: 800, crop: { x: 0, y: 0.08, size: 1 } },
       needsApproval: true,
     },
     {
@@ -526,7 +537,7 @@ export const team = {
       initials: "MM",
       role: "Safety, Fire Prevention & Security Advisor",
       bio: "A retired Captain of the Vancouver Fire Department, where he served from 1990 to 2022. Mark advises on safety, fire prevention, and security for the project, including industrial and wildland-interface risk, perimeter protection, and prevention systems from development through operation.",
-      photo: "/images/team/mark-mckellar.jpg",
+      photo: { src: "/images/team/mark-mckellar.jpg", width: 640, height: 800, crop: { x: 0.04, y: 0.065, size: 0.96 } },
     },
     {
       name: "Russell Hunt",
