@@ -10,8 +10,8 @@ Placeholders and open items before launch. Search the code for `PLACEHOLDER`, `V
 - [ ] **Contact phone.** Replace `company.contact.phone`, or remove it.
 - [ ] **Story photo.** Real Kootenay landscape near the site. Add it to `/public/images/sections/` and set `story.image.src`.
 - [ ] **Headshots.**
-  - Mark McKellar and Dr. Hussain: files exist in Drive (*Current core team* doc). Save them as `/public/images/team/mark-mckellar.jpg` and `/public/images/team/mohammed-hussain.jpg`, then uncomment `photo`.
-  - David Sedmak, JJ McKellar, Russell Hunt: not supplied. Initials are shown until they are.
+  - Done (1 Oct 2026): David Sedmak (Head Shot 2 of the two supplied), Dr. Hussain and Mark McKellar, cropped to face-centred squares in `/public/images/team/`. Originals are in `assets/source-images/`.
+  - JJ McKellar and Russell Hunt: not supplied. Initials are shown until they are.
 - [ ] **Russell Hunt.** Full bio and approved title (currently "Logistics, Good Neighbour & Operations Advisor").
 - [ ] **Social / profile URLs** for JSON-LD `sameAs` (`company.sameAs`).
 
