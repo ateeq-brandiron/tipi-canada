@@ -17,7 +17,7 @@ Placeholders and open items before launch. Search the code for `PLACEHOLDER`, `V
 
 ## Approvals needed
 
-- [ ] **Dr. Mohammed M. Hussain** approves his bio and title (he asked to confirm wording before external use).
+- [x] **Dr. Mohammed M. Hussain** bio and title: the site uses his requested title and a shortened version of his own bio (he permits shortening; only substantive changes need his confirmation). Approval label removed 1 Oct 2026.
 - [ ] **All team bios and titles**, especially JJ McKellar's title and full-name display.
 - [ ] **2026 timeline entry** ("Development"). It is not a dated FAQ milestone.
 - [ ] **Value-chain copy** for Compression, Storage and Transport (derived from the draft).

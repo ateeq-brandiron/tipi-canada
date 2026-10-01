@@ -530,7 +530,8 @@ export const team = {
       bio: "A clean-energy scientist with more than 20 years of experience in hydrogen and fuel cell technologies across academia, national research, and industry. He is a former Ballard Power researcher with research experience at the National Research Council of Canada (NRC), and holds a Ph.D. in Engineering from the University of Waterloo.",
       // Close selfie: the full width is the widest window available.
       photo: { src: "/images/team/mohammed-hussain.jpg", width: 600, height: 800, crop: { x: 0, y: 0.08, size: 1 } },
-      needsApproval: true,
+      // A shortened version of his own bio (which he allows) using the Ballard + NRC wording from the
+      // 19 Aug core-team correction, so no approval label (decided 1 Oct 2026).
     },
     {
       name: "Mark William McKellar",
