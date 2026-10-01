@@ -45,9 +45,9 @@ GitHub's web upload stops at 25 MB, so resize larger originals before uploading.
 
 ## Icon originals (`assets/source-icons/`)
 
-Received from the creative director on 29 Sept 2026 (Slack). PNG with transparency. Voice Icons 1–6 are used in the "How we work" section as `public/icons/voice-<trait>.png` (trimmed, 144px tall). Voice Icons_1 was exported as dark brown at ~64% opacity, which reads as tan on white; its web copy bakes in that tan (rgb 179,150,120) at full opacity so it looks the same on navy.
+Received from the creative director on 29 Sept and 1 Oct 2026. PNG with transparency. Voice Icons 1–6 are used in the "How we work" section as `public/icons/voice-<trait>.png` (trimmed, 144px tall). Voice Icons_1 and DIFFER Icons_1 were exported as dark brown at ~64% opacity, which reads as tan on white; their web copies bake in that tan at full opacity so they look the same on dark backgrounds.
 
 | File | Likely meant for (Messaging Platform) | Originally named |
 | --- | --- | --- |
-| `voice-icons-1.png` … `voice-icons-6.png` | The six Voice traits: Respectful, Purpose-Driven, Collaborative, Well-Researched, Strategic, Credible (order to confirm) | Voice Icons_1.png … Voice Icons_6.png (`_4` was "Voice Icons_4png.png") |
-| `differ-icons-3.png`, `-4`, `-5` | Key Differentiators 3–5: Financially Sustainable, Repeatable Community Model, Strategic Regional Advantage. Icons 1 and 2 not received yet. | Differ Icons_3.png … Differ Icons_5.png |
+| `voice-icons-1.png` … `voice-icons-6.png` | The six Voice traits: Respectful, Purpose-Driven, Collaborative, Well-Researched, Strategic, Credible (order confirmed) | Voice Icons_1.png … Voice Icons_6.png (`_4` was "Voice Icons_4png.png") |
+| `differ-icons-1.png` … `differ-icons-5.png` | Key Differentiators 1–5, in order. Used as `public/icons/differ-<item>.png`. | DIFFER Icons_1.png, Differ Icons_2.png … Differ Icons_5.png (1 and 2 received 1 Oct 2026) |
