@@ -11,7 +11,8 @@ Placeholders and open items before launch. Search the code for `PLACEHOLDER`, `V
 - [ ] **Story photo.** Real Kootenay landscape near the site. Add it to `/public/images/sections/` and set `story.image.src`.
 - [ ] **Headshots.**
   - Done (1 Oct 2026): David Sedmak (Head Shot 2 of the two supplied), Dr. Hussain and Mark McKellar, in `/public/images/team/` (upright, 800px tall, uncropped). Each is framed in the round avatar by a `crop` window in `content/site.ts`: face ~52% of the circle, eyes ~42% from the top. Originals are in `assets/source-images/`.
-  - JJ McKellar and Russell Hunt: not supplied. Initials are shown until they are.
+  - Done (2 Oct 2026): JJ McKellar (Head Shot 01 of the two supplied, chosen over 02 for a clearer face and calmer background).
+  - Russell Hunt: not supplied. Initials are shown until it is.
 - [ ] **Russell Hunt.** Full bio and approved title (currently "Logistics, Good Neighbour & Operations Advisor").
 - [ ] **Social / profile URLs** for JSON-LD `sameAs` (`company.sameAs`).
 

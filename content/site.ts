@@ -521,7 +521,8 @@ export const team = {
       initials: "JM",
       role: "Financial Department Oversight Officer",
       bio: "JJ brings 25 years of experience in financial services and automotive credit, including banking and loan structuring, and oversees the company's financial foundation, controls, and use of funds.",
-      // PLACEHOLDER: headshot not supplied.
+      // Head Shot 01 of the two supplied (1 Oct 2026).
+      photo: { src: "/images/team/jj-mckellar.jpg", width: 438, height: 640, crop: { x: 0.017, y: 0.117, size: 0.96 } },
     },
     {
       name: "Dr. Mohammed M. Hussain, Ph.D.",
