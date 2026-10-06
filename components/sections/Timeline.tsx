@@ -19,7 +19,7 @@ export function Timeline() {
         />
       }
     >
-      <ol className="relative grid gap-10 lg:grid-cols-4 lg:gap-8">
+      <ol className="relative grid gap-10 lg:grid-cols-3 lg:gap-8">
         <span aria-hidden="true" className="absolute left-0 right-0 top-[7px] hidden h-px bg-line lg:block" />
 
         {timeline.items.map((item, i) => (

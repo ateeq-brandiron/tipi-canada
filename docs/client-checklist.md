@@ -6,8 +6,8 @@ Placeholders and open items before launch. Search the code for `PLACEHOLDER`, `V
 
 ## Placeholders (visible on the site today)
 
-- [ ] **Contact email.** Replace `company.contact.email` and set `emailIsPlaceholder: false` to enable the mailto link.
-- [ ] **Contact phone.** Replace `company.contact.phone`, or remove it.
+- [x] **Contact email.** info@tipicanada.com, shown as a mailto link beside the form (client presentation, 5 Oct 2026).
+- [x] **Contact phone.** 778-793-7727 (client presentation, 5 Oct 2026).
 - [ ] **Story photo.** Real Kootenay landscape near the site. Add it to `/public/images/sections/` and set `story.image.src`.
 - [ ] **Headshots.**
   - Done (1 Oct 2026): David Sedmak (Head Shot 2 of the two supplied), Dr. Hussain and Mark McKellar, in `/public/images/team/` (upright, 800px tall, uncropped). Each is framed in the round avatar by a `crop` window in `content/site.ts`: face ~52% of the circle, eyes ~42% from the top. Originals are in `assets/source-images/`.

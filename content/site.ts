@@ -132,11 +132,11 @@ export const company = {
     country: "CA",
   },
   contact: {
-    // PLACEHOLDER: client to supply. Rendered as a visible placeholder until then.
-    email: "[CONTACT EMAIL — TBC]",
-    phone: "[PHONE — TBC]",
+    // Confirmed by David Sedmak in the client presentation (5 Oct 2026).
+    email: "info@tipicanada.com",
+    phone: "778-793-7727",
     /** Set to a real address to enable mailto links. */
-    emailIsPlaceholder: true,
+    emailIsPlaceholder: false,
   },
   /** Add real profile URLs when available (used in JSON-LD sameAs). */
   sameAs: [] as string[],
@@ -471,11 +471,7 @@ export const timeline = {
       title: "Castlegar hub",
       body: "Planned retail commercial outlet in Castlegar.",
     },
-    {
-      year: "2033",
-      title: "Trail hub",
-      body: "Planned commercial vehicle hub and industrial terminal in Trail.",
-    },
+    // 2033 Trail hub removed at the client's request (presentation, 5 Oct 2026), matching the deck.
   ] satisfies TimelineItem[],
   caveat:
     "Timelines depend on successful completion of land acquisition, financing, permits, interconnection, and partnership processes. All timelines and projections are subject to change based on regulatory, partnership, and financing outcomes.",
