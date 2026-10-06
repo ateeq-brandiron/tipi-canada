@@ -33,7 +33,10 @@ export function Contact() {
                 )}
               </li>
               <li>
-                <span>{phone}</span>
+                {/* Tap-to-call; the number is North American (+1), digits only in the href. */}
+                <a href={`tel:+1${phone.replace(/\D/g, "")}`} className="underline decoration-yellow underline-offset-4 hover:text-yellow">
+                  {phone}
+                </a>
               </li>
             </ul>
           </div>
